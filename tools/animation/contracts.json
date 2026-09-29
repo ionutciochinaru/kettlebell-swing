@@ -1,0 +1,664 @@
+{
+  "squat": {
+    "variant": "Bodyweight squat, comfortable depth",
+    "counting": "One descent and return is one repetition",
+    "phases": "Stand; hips back and down; stand",
+    "contacts": "Both soles planted",
+    "sources": [
+      "S1"
+    ]
+  },
+  "wall-pushup": {
+    "variant": "Standing wall press-up",
+    "counting": "One approach and press away is one repetition",
+    "phases": "Hands on wall; bend elbows; press away",
+    "contacts": "Palms on wall and both feet planted",
+    "sources": [
+      "S2"
+    ]
+  },
+  "calf-raise": {
+    "variant": "Bilateral standing calf raise",
+    "counting": "One heel raise and lower is one repetition",
+    "phases": "Feet flat; rise onto forefeet; brief top hold; lower heels",
+    "contacts": "Forefeet stay grounded",
+    "sources": [
+      "S2"
+    ]
+  },
+  "shoulder-circle": {
+    "variant": "Relaxed backward shoulder rolls, upper-body view",
+    "counting": "One complete shoulder circle is one repetition",
+    "phases": "Shoulders forward; up; back; down",
+    "contacts": "Standing body stable; arms hang loosely",
+    "sources": [
+      "S3"
+    ]
+  },
+  "reverse-lunge": {
+    "variant": "Alternating bodyweight reverse lunge",
+    "counting": "Each backward lunge and return is one repetition; loop shows two",
+    "phases": "Step back; lower; rise; return; switch legs",
+    "contacts": "Front sole stays fixed; back foot supports on forefoot",
+    "sources": [
+      "S4",
+      "S14"
+    ]
+  },
+  "pushup": {
+    "variant": "Full push-up from toes",
+    "counting": "One controlled descent and press is one repetition",
+    "phases": "High plank; bend elbows; press up",
+    "contacts": "Both palms and forefeet stay grounded",
+    "sources": [
+      "S5",
+      "S6"
+    ]
+  },
+  "standing-knee": {
+    "variant": "Alternating standing bent-knee lift",
+    "counting": "Each knee lift and replace is one repetition; loop shows two",
+    "phases": "Lift left bent knee; replace; lift right bent knee; replace",
+    "contacts": "Supporting foot fixed",
+    "sources": [
+      "S3"
+    ]
+  },
+  "side-step": {
+    "variant": "Sideways step-together and return",
+    "counting": "Time-based; loop includes both directions",
+    "phases": "Lead foot steps out; trailing foot follows; reverse",
+    "contacts": "Only the swing foot leaves the floor",
+    "sources": [
+      "S7"
+    ]
+  },
+  "glute-bridge": {
+    "variant": "Bilateral floor glute bridge",
+    "counting": "One hip lift and lower is one repetition",
+    "phases": "Supine with bent knees; lift hips; brief top hold; lower",
+    "contacts": "Head, upper back and soles supported",
+    "sources": [
+      "S8"
+    ]
+  },
+  "bird-dog": {
+    "variant": "Alternating contralateral bird dog",
+    "counting": "Each opposite arm/leg reach and return is one repetition; loop shows two",
+    "phases": "Hands and knees; reach one diagonal; return; switch diagonal",
+    "contacts": "Support palm and opposite knee remain fixed",
+    "sources": [
+      "S9"
+    ]
+  },
+  "plank": {
+    "variant": "Forearm plank from toes",
+    "counting": "Time-based hold; one static reference frame",
+    "phases": "Maintain the shown supported position",
+    "contacts": "Forearms and forefeet grounded",
+    "sources": [
+      "S10"
+    ]
+  },
+  "sit-stand": {
+    "variant": "Chair sit-to-stand without arm support",
+    "counting": "One rise and controlled return to the seat is one repetition",
+    "phases": "Sit; lean forward; stand; controlled sit",
+    "contacts": "Feet planted; seat supports pelvis during seated pause",
+    "sources": [
+      "S2"
+    ]
+  },
+  "seated-knee": {
+    "variant": "Alternating seated hip march",
+    "counting": "Each bent-knee lift and return is one repetition; loop shows two",
+    "phases": "Sit tall; lift one bent knee; lower; switch",
+    "contacts": "Pelvis supported on seat; other foot on floor",
+    "sources": [
+      "S11"
+    ]
+  },
+  "kb-deadlift": {
+    "variant": "Two-hand kettlebell deadlift",
+    "counting": "One lift from the floor and controlled return is one repetition",
+    "phases": "Grip floor bell; extend hips to stand; hinge and return bell; brief floor reset",
+    "contacts": "Both soles planted; both hands maintain handle grip",
+    "sources": [
+      "S4",
+      "S12"
+    ]
+  },
+  "goblet-squat": {
+    "variant": "Kettlebell goblet squat, comfortable depth",
+    "counting": "One squat and stand is one repetition",
+    "phases": "Hold bell at chest; squat; stand",
+    "contacts": "Both soles planted; hands share bell grip",
+    "sources": [
+      "S1",
+      "S12"
+    ]
+  },
+  "db-curl": {
+    "variant": "Bilateral standing dumbbell curl",
+    "counting": "One curl and lower with both arms is one repetition",
+    "phases": "Upper arms at sides; bend elbows; lower",
+    "contacts": "Feet planted; weights held throughout",
+    "sources": [
+      "S2"
+    ]
+  },
+  "band-pull": {
+    "variant": "Standing band pull-apart at chest height",
+    "counting": "One opening and controlled return is one repetition",
+    "phases": "Arms ahead; open arms to sides; return",
+    "contacts": "Feet planted; band endpoints held throughout",
+    "sources": [
+      "S13"
+    ]
+  },
+  "kb-swing": {
+    "variant": "Two-hand chest-height kettlebell swing",
+    "counting": "One backswing and forward float is one repetition",
+    "phases": "Hinge into backswing; hip drive; chest-height float; return to hinge",
+    "contacts": "Both feet planted; long arms and shared handle grip",
+    "sources": [
+      "K1"
+    ]
+  },
+  "kb-reverse-lunge": {
+    "variant": "Alternating goblet reverse lunge",
+    "counting": "Each lunge and return is one repetition; loop shows two",
+    "phases": "Goblet hold; step back; lower; rise through front leg; return; switch",
+    "contacts": "Front sole stays fixed; rear forefoot supports lowering; shared bell grip",
+    "sources": [
+      "K2"
+    ]
+  },
+  "kb-upright-row": {
+    "variant": "Two-hand kettlebell upright row to lower chest",
+    "counting": "One lift and controlled lower is one repetition",
+    "phases": "Stand tall; lift close to body; lower without swinging",
+    "contacts": "Both soles planted; hands share handle; elbows below shoulders",
+    "sources": [
+      "K3"
+    ]
+  },
+  "kb-bent-row": {
+    "variant": "Two-hand unsupported kettlebell bent-over row",
+    "counting": "One pull and controlled lower is one repetition",
+    "phases": "Hold hinge; draw bell toward lower ribs; extend arms",
+    "contacts": "Feet planted; torso angle stable; shared handle grip",
+    "sources": [
+      "K4"
+    ]
+  },
+  "kb-side-lunge": {
+    "variant": "Alternating wide-stance goblet lateral lunge",
+    "counting": "Each shift and return to centre is one repetition; loop shows two",
+    "phases": "Wide stance; bend one knee and sit back; return; repeat other side",
+    "contacts": "Both feet planted; bell held at chest; nonworking leg stays long",
+    "sources": [
+      "K5"
+    ]
+  },
+  "kb-side-bend": {
+    "variant": "Alternating single-kettlebell standing side bend",
+    "counting": "Each bend and return is one repetition; transfers do not count",
+    "phases": "Hold bell at side; small lateral bend; return tall; shared grip transfer; switch",
+    "contacts": "Feet planted; no torso twist; one hand grips bell except during handoff",
+    "sources": [
+      "K6"
+    ]
+  },
+  "kb-curl": {
+    "variant": "Alternating single-kettlebell curl with handoff",
+    "counting": "Each curl and lower is one repetition; transfers do not count",
+    "phases": "Curl with upper arm quiet; lower; shared grip transfer in front; switch",
+    "contacts": "Feet planted; one hand grips handle except during handoff",
+    "sources": [
+      "K7"
+    ]
+  },
+  "kb-halo": {
+    "variant": "Standing two-hand horns-grip kettlebell halo, alternating directions",
+    "counting": "Each full circle is one repetition; loop shows two circles",
+    "phases": "Front reset with base up; first side with base rearward; rear with base down and elbows raised; other side with base rearward; front reset; reverse direction",
+    "contacts": "Feet planted; head and torso steady; palms wrap opposite horns continuously; straight wrists; the bell rotates in the hands without detaching",
+    "camera": "Fixed three-quarter upper-body crop; planted feet remain constrained outside crop",
+    "timing": "128 frames at 16 fps; eight-second loop with brief front resets",
+    "sources": [
+      "H1",
+      "H2",
+      "H3"
+    ],
+    "source_index": "docs/animation-review/halo-form-research-2026-09-25.md"
+  },
+  "neck-flexion": {
+    "variant": "Standing chin-to-chest neck flexion, upper-body view",
+    "counting": "One lower, hold and lift is one repetition",
+    "phases": "Neutral; flex neck; hold; return",
+    "contacts": "Standing body still; shoulders relaxed",
+    "sources": [
+      "S15",
+      "S16"
+    ]
+  },
+  "neck-extension": {
+    "variant": "Standing look-up neck extension, upper-body view",
+    "counting": "One look up, hold and return is one repetition",
+    "phases": "Neutral; extend neck; hold; return",
+    "contacts": "Standing body still",
+    "sources": [
+      "S15"
+    ]
+  },
+  "side-neck": {
+    "variant": "Alternating ear-to-shoulder side flexion, front upper-body view",
+    "counting": "Each tilt and return is one repetition; loop shows both sides",
+    "phases": "Tilt left; hold; return; tilt right; hold; return",
+    "contacts": "Shoulders level and relaxed",
+    "sources": [
+      "S15",
+      "S16",
+      "S17"
+    ]
+  },
+  "overhead-reach": {
+    "variant": "Standing overhead reach with interlaced fingers",
+    "counting": "Time-based hold; loop eases into the stretch, holds, and returns",
+    "phases": "Move into the stretch; hold; return",
+    "contacts": "Both feet planted",
+    "sources": [
+      "S27",
+      "S28"
+    ]
+  },
+  "triceps-stretch": {
+    "variant": "Standing overhead triceps stretch, three-quarter side view; one side shown",
+    "counting": "Time-based hold; loop eases into the stretch, holds, and returns",
+    "phases": "Move into the stretch; hold; return",
+    "contacts": "Hand on the raised elbow; feet planted",
+    "sources": [
+      "S19"
+    ]
+  },
+  "cross-body-shoulder": {
+    "variant": "Standing cross-body shoulder stretch; one side shown",
+    "counting": "Time-based hold; loop eases into the stretch, holds, and returns",
+    "phases": "Move into the stretch; hold; return",
+    "contacts": "Supporting hand above the elbow",
+    "sources": [
+      "S18",
+      "S19"
+    ]
+  },
+  "behind-back-clasp": {
+    "variant": "Standing hands-clasped chest stretch, arms straight and lifted, front three-quarter view",
+    "counting": "Time-based hold; loop eases into the stretch, holds, and returns",
+    "phases": "Move into the stretch; hold; return",
+    "contacts": "Fingers interlinked behind the hips",
+    "sources": [
+      "S18",
+      "S19"
+    ]
+  },
+  "torso-extension": {
+    "variant": "Standing lumbar extension with hands on hips",
+    "counting": "One lean back and return is one repetition",
+    "phases": "Upright; lean back; return without holding",
+    "contacts": "Both feet planted; hands on hips",
+    "sources": [
+      "S20"
+    ]
+  },
+  "side-bend": {
+    "variant": "Alternating standing side bend with overhead reach, front view",
+    "counting": "Each bend and return is one repetition; loop shows both sides",
+    "phases": "Reach and bend left; return; reach and bend right; return",
+    "contacts": "Hips level; both feet planted",
+    "sources": [
+      "S17",
+      "S20",
+      "S21"
+    ]
+  },
+  "oblique-twist": {
+    "variant": "Alternating standing trunk rotation, hands clasped at chest height, elbows out, front-above view",
+    "counting": "Each turn and return is one repetition; loop shows both sides",
+    "phases": "Turn left; return; turn right; return",
+    "contacts": "Hips square; both feet planted",
+    "sources": [
+      "S21"
+    ]
+  },
+  "cat-cow": {
+    "variant": "Quadruped cat-cow, side view",
+    "counting": "One cat and one cow is one repetition",
+    "phases": "Round back, head down; return; belly sinks, head up; return",
+    "contacts": "Hands under shoulders; knees under hips",
+    "sources": [
+      "S20",
+      "S22"
+    ]
+  },
+  "quad-stretch": {
+    "variant": "Standing quadriceps stretch; one side shown",
+    "counting": "Time-based hold; loop eases into the stretch, holds, and returns",
+    "phases": "Move into the stretch; hold; return",
+    "contacts": "Standing foot planted; hand on ankle",
+    "sources": [
+      "S18"
+    ]
+  },
+  "hamstring-stretch": {
+    "variant": "Standing hamstring stretch, heel down and toes up; one side shown",
+    "counting": "Time-based hold; loop eases into the stretch, holds, and returns",
+    "phases": "Move into the stretch; hold; return",
+    "contacts": "Front heel and back foot on the floor",
+    "sources": [
+      "S18"
+    ]
+  },
+  "hip-flexor-lunge": {
+    "variant": "Half-kneeling hip-flexor stretch; one side shown",
+    "counting": "Time-based hold; loop eases into the stretch, holds, and returns",
+    "phases": "Move into the stretch; hold; return",
+    "contacts": "Back knee and front foot on the floor",
+    "sources": [
+      "S25"
+    ]
+  },
+  "reclined-twist": {
+    "variant": "Supine knee rolls (reclined spinal twist), view from the feet",
+    "counting": "Each roll and return is one repetition; loop shows both sides",
+    "phases": "Roll knees left; return; roll right; return",
+    "contacts": "Shoulders and arms flat on the floor",
+    "sources": [
+      "S20"
+    ]
+  },
+  "wide-pushup": {
+    "variant": "Wide-hand push-up from toes",
+    "counting": "One lower and press is one repetition",
+    "phases": "High plank; lower; press",
+    "contacts": "Palms and forefeet grounded",
+    "sources": [
+      "S30",
+      "S5",
+      "S6"
+    ]
+  },
+  "close-pushup": {
+    "variant": "Close-grip push-up, elbows by the sides",
+    "counting": "One lower and press is one repetition",
+    "phases": "High plank; lower; press",
+    "contacts": "Palms and forefeet grounded",
+    "sources": [
+      "S30",
+      "S36"
+    ]
+  },
+  "staggered-pushup": {
+    "variant": "Push-up with staggered hands; one side shown",
+    "counting": "One lower and press is one repetition",
+    "phases": "High plank; lower; press",
+    "contacts": "Palms and forefeet grounded",
+    "sources": [
+      "S34"
+    ]
+  },
+  "stacked-pushup": {
+    "variant": "Push-up with one foot stacked on the other (chart-defined)",
+    "counting": "One lower and press is one repetition",
+    "phases": "High plank; lower; press",
+    "contacts": "Palms and the lower forefoot grounded",
+    "sources": [
+      "S5",
+      "S6"
+    ]
+  },
+  "raised-leg-pushup": {
+    "variant": "Push-up with single-leg raise, alternating",
+    "counting": "Each push-up is one repetition; loop shows both legs",
+    "phases": "Lower; press while lifting one straight leg; return; switch",
+    "contacts": "Palms and the supporting forefoot grounded",
+    "sources": [
+      "S35"
+    ]
+  },
+  "spiderman-pushup": {
+    "variant": "Spiderman push-up, alternating (chart-defined)",
+    "counting": "Each push-up is one repetition; loop shows both sides",
+    "phases": "Lower while drawing the knee to the elbow; press; return; switch",
+    "contacts": "Palms and the supporting forefoot grounded",
+    "sources": [
+      "S5",
+      "S6"
+    ]
+  },
+  "decline-pushup": {
+    "variant": "Decline push-up, feet on a chair seat",
+    "counting": "One lower and press is one repetition",
+    "phases": "Feet raised plank; lower; press",
+    "contacts": "Palms on the floor, feet on the seat",
+    "sources": [
+      "S33"
+    ]
+  },
+  "clapping-pushup": {
+    "variant": "Plyometric push-up with a clap",
+    "counting": "One explosive press and landing is one repetition",
+    "phases": "Lower; explode; clap in the air; land; reset",
+    "contacts": "Forefeet grounded; hands leave the floor briefly",
+    "sources": [
+      "S32"
+    ]
+  },
+  "power-pushup": {
+    "variant": "Plyometric push-up, hands leave the floor",
+    "counting": "One explosive press and landing is one repetition",
+    "phases": "Lower; explode; land; reset",
+    "contacts": "Forefeet grounded; hands leave the floor briefly",
+    "sources": [
+      "S32"
+    ]
+  },
+  "pike-pushup": {
+    "variant": "Pike push-up from an inverted V",
+    "counting": "One lower and press is one repetition",
+    "phases": "Inverted V; lower head toward the floor; press",
+    "contacts": "Palms and feet grounded",
+    "sources": [
+      "S31",
+      "S30"
+    ]
+  },
+  "sit-ups": {
+    "variant": "Bent-knee sit-up, hands behind the head",
+    "counting": "One curl up and down is one repetition",
+    "phases": "Lie; curl up; lower",
+    "contacts": "Feet and pelvis on the floor",
+    "sources": [
+      "S37"
+    ]
+  },
+  "reverse-crunches": {
+    "variant": "Supine reverse crunch",
+    "counting": "One curl and lower is one repetition",
+    "phases": "Tabletop legs; curl knees in; lower",
+    "contacts": "Back and arms on the floor",
+    "sources": [
+      "S38"
+    ]
+  },
+  "bicycle-crunches": {
+    "variant": "Supine bicycle crunch, alternating",
+    "counting": "Each side is one repetition; loop shows both",
+    "phases": "Knee in with opposite elbow; switch",
+    "contacts": "Lower back on the floor",
+    "sources": [
+      "S39"
+    ]
+  },
+  "flutter-kicks": {
+    "variant": "Supine flutter kicks",
+    "counting": "Time-based",
+    "phases": "Small alternating kicks",
+    "contacts": "Lower back and arms on the floor",
+    "sources": [
+      "S40"
+    ]
+  },
+  "leg-raises": {
+    "variant": "Supine straight-leg raise to about 45 degrees",
+    "counting": "One raise and lower is one repetition",
+    "phases": "Hover; raise; lower",
+    "contacts": "Lower back and arms on the floor",
+    "sources": [
+      "S41"
+    ]
+  },
+  "superman": {
+    "variant": "Prone superman lift and hold",
+    "counting": "Time-based hold; loop lifts, holds, lowers",
+    "phases": "Lift; hold; lower",
+    "contacts": "Hips and belly on the floor",
+    "sources": [
+      "S56"
+    ]
+  },
+  "back-lifts": {
+    "variant": "Prone chest lift, hands by the temples (chart-defined)",
+    "counting": "One lift and lower is one repetition",
+    "phases": "Lie; lift chest; lower",
+    "contacts": "Hips and legs on the floor",
+    "sources": []
+  },
+  "alt-arm-leg-plank": {
+    "variant": "High plank with opposite arm and leg reach, alternating (chart-defined)",
+    "counting": "Each side is one repetition; loop shows both",
+    "phases": "Reach; hold; return; switch",
+    "contacts": "Supporting palm and forefoot grounded",
+    "sources": []
+  },
+  "shoulder-taps": {
+    "variant": "High-plank shoulder taps, alternating",
+    "counting": "Each tap is one repetition; loop shows both",
+    "phases": "Tap; replace; switch",
+    "contacts": "Supporting palm and both forefeet grounded",
+    "sources": [
+      "S59"
+    ]
+  },
+  "climbers": {
+    "variant": "Mountain climbers",
+    "counting": "Time-based",
+    "phases": "Alternating knee drives",
+    "contacts": "Palms grounded",
+    "sources": [
+      "S44"
+    ]
+  },
+  "plank-jump-ins": {
+    "variant": "Plank jump-in to crouch and back",
+    "counting": "One in and out is one repetition",
+    "phases": "Plank; jump in; jump out",
+    "contacts": "Palms grounded",
+    "sources": [
+      "S45"
+    ]
+  },
+  "tricep-extensions": {
+    "variant": "Forearm-plank to high-plank tricep extension",
+    "counting": "One press up and lower is one repetition",
+    "phases": "Forearms; press up; lower",
+    "contacts": "Hands and forefeet grounded",
+    "sources": [
+      "S51"
+    ]
+  },
+  "pseudo-planche": {
+    "variant": "Pseudo planche lean from a high plank (chart-defined)",
+    "counting": "Time-based hold; loop leans in and back",
+    "phases": "Lean forward; hold; return",
+    "contacts": "Palms and forefeet grounded",
+    "sources": []
+  },
+  "tricep-dips": {
+    "variant": "Floor tricep dips",
+    "counting": "One lower and press is one repetition",
+    "phases": "Hips up; lower; press",
+    "contacts": "Hands and feet on the floor",
+    "sources": [
+      "S50"
+    ]
+  },
+  "fly-steps": {
+    "variant": "Standing hinge with rear leg lift, arms out, alternating (chart-defined)",
+    "counting": "Each side is one repetition; loop shows both",
+    "phases": "Hinge and lift; hold; return; switch",
+    "contacts": "Standing foot planted",
+    "sources": []
+  },
+  "side-leg-raises": {
+    "variant": "Standing lateral leg raise, alternating",
+    "counting": "Each raise is one repetition; loop shows both",
+    "phases": "Raise; lower; switch",
+    "contacts": "Standing foot planted",
+    "sources": [
+      "S49"
+    ]
+  },
+  "punches": {
+    "variant": "Jab and cross from a fighting stance",
+    "counting": "Each punch is one repetition",
+    "phases": "Jab; cross; guard",
+    "contacts": "Both feet planted",
+    "sources": [
+      "S53"
+    ]
+  },
+  "side-to-side-chops": {
+    "variant": "Standing side-to-side chops",
+    "counting": "Each swing is one repetition",
+    "phases": "Swing left; swing right",
+    "contacts": "Both feet planted",
+    "sources": [
+      "S54"
+    ]
+  },
+  "chest-expansions": {
+    "variant": "Standing chest expansions with alternating cross",
+    "counting": "Each open and cross is one repetition",
+    "phases": "Open; cross; open; cross",
+    "contacts": "Both feet planted",
+    "sources": [
+      "S58"
+    ]
+  },
+  "chin-ups": {
+    "variant": "Underhand chin-up",
+    "counting": "One pull and lower is one repetition",
+    "phases": "Hang; pull; lower",
+    "contacts": "Hands on the bar",
+    "sources": [
+      "S55"
+    ]
+  },
+  "pull-ups": {
+    "variant": "Overhand pull-up",
+    "counting": "One pull and lower is one repetition",
+    "phases": "Hang; pull; lower",
+    "contacts": "Hands on the bar",
+    "sources": [
+      "S55"
+    ]
+  },
+  "doorframe-rows": {
+    "variant": "Doorframe row (chart-defined)",
+    "counting": "One pull and return is one repetition",
+    "phases": "Lean back; pull in; lower",
+    "contacts": "Feet planted, hands on the frame",
+    "sources": []
+  }
+}

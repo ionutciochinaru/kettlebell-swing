@@ -1,0 +1,290 @@
+{
+  "squat": {
+    "frames": 24,
+    "fps": 8
+  },
+  "wall-pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "calf-raise": {
+    "frames": 24,
+    "fps": 8
+  },
+  "shoulder-circle": {
+    "frames": 24,
+    "fps": 8
+  },
+  "reverse-lunge": {
+    "frames": 32,
+    "fps": 6
+  },
+  "pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "standing-knee": {
+    "frames": 32,
+    "fps": 8
+  },
+  "side-step": {
+    "frames": 32,
+    "fps": 8
+  },
+  "glute-bridge": {
+    "frames": 24,
+    "fps": 8
+  },
+  "bird-dog": {
+    "frames": 32,
+    "fps": 6
+  },
+  "plank": {
+    "frames": 1,
+    "fps": 0
+  },
+  "sit-stand": {
+    "frames": 24,
+    "fps": 8
+  },
+  "seated-knee": {
+    "frames": 32,
+    "fps": 8
+  },
+  "kb-deadlift": {
+    "frames": 24,
+    "fps": 8
+  },
+  "goblet-squat": {
+    "frames": 24,
+    "fps": 8
+  },
+  "db-curl": {
+    "frames": 24,
+    "fps": 8
+  },
+  "band-pull": {
+    "frames": 24,
+    "fps": 8
+  },
+  "kb-swing": {
+    "frames": 16,
+    "fps": 8
+  },
+  "kb-reverse-lunge": {
+    "frames": 32,
+    "fps": 6
+  },
+  "kb-upright-row": {
+    "frames": 24,
+    "fps": 8
+  },
+  "kb-bent-row": {
+    "frames": 24,
+    "fps": 8
+  },
+  "kb-side-lunge": {
+    "frames": 32,
+    "fps": 6
+  },
+  "kb-side-bend": {
+    "frames": 48,
+    "fps": 6
+  },
+  "kb-curl": {
+    "frames": 48,
+    "fps": 6
+  },
+  "kb-halo": {
+    "frames": 64,
+    "fps": 8
+  },
+  "neck-flexion": {
+    "frames": 16,
+    "fps": 6
+  },
+  "neck-extension": {
+    "frames": 16,
+    "fps": 6
+  },
+  "side-neck": {
+    "frames": 24,
+    "fps": 6
+  },
+  "overhead-reach": {
+    "frames": 24,
+    "fps": 6
+  },
+  "triceps-stretch": {
+    "frames": 24,
+    "fps": 6
+  },
+  "cross-body-shoulder": {
+    "frames": 24,
+    "fps": 6
+  },
+  "behind-back-clasp": {
+    "frames": 24,
+    "fps": 6
+  },
+  "torso-extension": {
+    "frames": 16,
+    "fps": 6
+  },
+  "side-bend": {
+    "frames": 24,
+    "fps": 6
+  },
+  "oblique-twist": {
+    "frames": 24,
+    "fps": 6
+  },
+  "cat-cow": {
+    "frames": 24,
+    "fps": 6
+  },
+  "quad-stretch": {
+    "frames": 24,
+    "fps": 6
+  },
+  "hamstring-stretch": {
+    "frames": 24,
+    "fps": 6
+  },
+  "hip-flexor-lunge": {
+    "frames": 24,
+    "fps": 6
+  },
+  "reclined-twist": {
+    "frames": 24,
+    "fps": 6
+  },
+  "wide-pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "close-pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "staggered-pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "stacked-pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "raised-leg-pushup": {
+    "frames": 32,
+    "fps": 8
+  },
+  "spiderman-pushup": {
+    "frames": 32,
+    "fps": 8
+  },
+  "decline-pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "clapping-pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "power-pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "pike-pushup": {
+    "frames": 24,
+    "fps": 8
+  },
+  "sit-ups": {
+    "frames": 24,
+    "fps": 8
+  },
+  "reverse-crunches": {
+    "frames": 24,
+    "fps": 8
+  },
+  "bicycle-crunches": {
+    "frames": 32,
+    "fps": 8
+  },
+  "flutter-kicks": {
+    "frames": 16,
+    "fps": 8
+  },
+  "leg-raises": {
+    "frames": 24,
+    "fps": 8
+  },
+  "superman": {
+    "frames": 24,
+    "fps": 6
+  },
+  "back-lifts": {
+    "frames": 24,
+    "fps": 8
+  },
+  "alt-arm-leg-plank": {
+    "frames": 32,
+    "fps": 8
+  },
+  "shoulder-taps": {
+    "frames": 32,
+    "fps": 8
+  },
+  "climbers": {
+    "frames": 16,
+    "fps": 8
+  },
+  "plank-jump-ins": {
+    "frames": 24,
+    "fps": 8
+  },
+  "tricep-extensions": {
+    "frames": 24,
+    "fps": 8
+  },
+  "pseudo-planche": {
+    "frames": 24,
+    "fps": 6
+  },
+  "tricep-dips": {
+    "frames": 24,
+    "fps": 8
+  },
+  "fly-steps": {
+    "frames": 32,
+    "fps": 6
+  },
+  "side-leg-raises": {
+    "frames": 24,
+    "fps": 8
+  },
+  "punches": {
+    "frames": 16,
+    "fps": 8
+  },
+  "side-to-side-chops": {
+    "frames": 24,
+    "fps": 8
+  },
+  "chest-expansions": {
+    "frames": 24,
+    "fps": 8
+  },
+  "chin-ups": {
+    "frames": 24,
+    "fps": 6
+  },
+  "pull-ups": {
+    "frames": 24,
+    "fps": 6
+  },
+  "doorframe-rows": {
+    "frames": 24,
+    "fps": 8
+  }
+}

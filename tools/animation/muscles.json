@@ -1,0 +1,272 @@
+{
+  "squat": {
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "support": [
+      "abs",
+      "hamstrings"
+    ],
+    "label": "Quads · Glutes",
+    "role": "strength",
+    "sources": [
+      "M01",
+      "M06"
+    ],
+    "note": "Comfortable-depth bodyweight squat. Selected major knee/hip extensors; red does not rank muscle activation or imply the omitted adductors are inactive."
+  },
+  "wall-pushup": {
+    "primary": [
+      "chest",
+      "triceps"
+    ],
+    "support": [
+      "deltoids",
+      "abs"
+    ],
+    "label": "Chest · Triceps",
+    "role": "strength",
+    "sources": [
+      "M02",
+      "M03"
+    ],
+    "note": "Standing wall press-up. Applying the pressing muscle roles to the documented wall variation is anatomical inference; loading differs from a floor push-up. Deltoid support means anterior fibers."
+  },
+  "calf-raise": {
+    "primary": [
+      "calves"
+    ],
+    "support": [],
+    "label": "Calves",
+    "role": "strength",
+    "sources": [
+      "M05"
+    ],
+    "note": "Bilateral standing heel raise; gastrocnemius and soleus. Highlight posterior lower-leg muscle bellies, not the shin or Achilles tendon."
+  },
+  "shoulder-circle": {
+    "primary": [
+      "upper_traps"
+    ],
+    "support": [
+      "upper_back"
+    ],
+    "label": "Shoulder mobility",
+    "role": "mobility",
+    "sources": [
+      "M04",
+      "M07"
+    ],
+    "note": "Relaxed backward shoulder rolls with hanging arms. Upper-trapezius highlight is a selected scapular-motion region inferred from anatomy; it is not an isolated muscle-strength claim. Do not color the entire deltoid as though this were an arm-circle exercise."
+  },
+  "reverse-lunge": {
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "support": [
+      "abs",
+      "hamstrings"
+    ],
+    "label": "Quads · Glutes",
+    "role": "strength",
+    "sources": [
+      "M01"
+    ],
+    "note": "Alternating reverse lunge. Whole-loop coloring indicates the exercise focus on both sides, not simultaneous equal loading of the stance and stepping legs."
+  },
+  "pushup": {
+    "primary": [
+      "chest",
+      "triceps"
+    ],
+    "support": [
+      "deltoids",
+      "abs"
+    ],
+    "label": "Chest · Triceps",
+    "role": "strength",
+    "sources": [
+      "M02"
+    ],
+    "note": "Full floor push-up from toes. Pectoralis major and triceps are selected pressing targets; anterior deltoid and trunk stabilization remain secondary."
+  },
+  "standing-knee": {
+    "primary": [
+      "hip_flexors"
+    ],
+    "support": [
+      "abs",
+      "lateral_glutes"
+    ],
+    "label": "Hip flexors",
+    "role": "movement",
+    "sources": [
+      "M04",
+      "M06"
+    ],
+    "note": "Alternating bent-knee lift. Hip flexion is the highlighted action; keeping the trunk stable is support. This is not a crunch or knee-extension exercise. Deep hip-flexor projection is schematic."
+  },
+  "side-step": {
+    "primary": [
+      "lateral_glutes"
+    ],
+    "support": [
+      "quads",
+      "calves"
+    ],
+    "label": "Outer hips",
+    "role": "movement",
+    "sources": [
+      "M08",
+      "M09"
+    ],
+    "note": "Unresisted step-together and return. Lateral gluteal abductors are a conservative anatomical inference for opening the step and pelvic control; this is not a banded lateral squat walk. Do not highlight the entire posterior gluteus maximus as the sole mover; adductors also help the return."
+  },
+  "glute-bridge": {
+    "primary": [
+      "glutes"
+    ],
+    "support": [
+      "hamstrings",
+      "abs"
+    ],
+    "label": "Glutes",
+    "role": "strength",
+    "sources": [
+      "M10",
+      "M01",
+      "M06"
+    ],
+    "note": "Bilateral bent-knee floor bridge. Gluteus maximus is the selected hip-extension focus; hamstrings and trunk stabilization contribute. Red is not an instruction to arch or extend the lower back."
+  },
+  "bird-dog": {
+    "primary": [
+      "abs"
+    ],
+    "support": [
+      "obliques",
+      "glutes",
+      "deltoids"
+    ],
+    "label": "Core stability",
+    "role": "stability",
+    "sources": [
+      "M11"
+    ],
+    "note": "Alternating opposite arm/leg reach. Red selects abdominal stabilization; important spinal extensors and deep stabilizers are deliberately not all painted. Never substitute upper_back for lumbar spinal stabilizers. A superficial abdominal patch cannot literally show transverse abdominis. Obliques are valid support but should not be relabelled rectus abdominis to improve camera visibility."
+  },
+  "plank": {
+    "primary": [
+      "abs"
+    ],
+    "support": [
+      "obliques",
+      "deltoids"
+    ],
+    "label": "Core stability",
+    "role": "stability",
+    "sources": [
+      "M12"
+    ],
+    "note": "Forearm plank from toes. Abdominal anti-extension emphasis, not an abdominal crunch. Deep transverse abdominis is represented only by the schematic core focus; shoulders, spinal and scapular stabilizers also contribute."
+  },
+  "sit-stand": {
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "support": [
+      "abs"
+    ],
+    "label": "Quads · Glutes",
+    "role": "strength",
+    "sources": [
+      "M03",
+      "M13",
+      "M01"
+    ],
+    "note": "Chair sit-to-stand without arm assistance. Quadriceps emphasis is explicit in the NHS source; gluteal hip-extension focus follows the squat/sit-stand movement relationship. Actual demand changes with chair height and technique."
+  },
+  "seated-knee": {
+    "primary": [
+      "hip_flexors"
+    ],
+    "support": [
+      "abs"
+    ],
+    "label": "Hip flexors",
+    "role": "movement",
+    "sources": [
+      "M14",
+      "M06"
+    ],
+    "note": "Alternating seated hip march with bent knee and supported pelvis. Highlights hip flexion, not knee extension. Do not color all quadriceps as if the user were straightening the knee. Deep hip-flexor projection is schematic."
+  },
+  "kb-deadlift": {
+    "primary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "support": [
+      "abs",
+      "quads",
+      "upper_back"
+    ],
+    "label": "Glutes · Hamstrings",
+    "role": "strength",
+    "sources": [
+      "M15",
+      "M01"
+    ],
+    "note": "Two-hand floor kettlebell deadlift with a hip hinge. Selected hip extensors; spinal extensors, grip and some knee extension also contribute. This is not a claim that a floor deadlift has no quadriceps demand, or that erectors are an upper-back-only structure."
+  },
+  "goblet-squat": {
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "support": [
+      "abs",
+      "hamstrings",
+      "biceps"
+    ],
+    "label": "Quads · Glutes",
+    "role": "strength",
+    "sources": [
+      "M16"
+    ],
+    "note": "Comfortable-depth kettlebell goblet squat. The bell is held at the chest; holding muscles are not the main illustrated target. Arm support is a task inference, not a measured activation ranking."
+  },
+  "db-curl": {
+    "primary": [
+      "biceps"
+    ],
+    "support": [],
+    "label": "Biceps",
+    "role": "strength",
+    "sources": [
+      "M03",
+      "M07"
+    ],
+    "note": "Bilateral standing dumbbell curl. Biceps brachii is the selected visible elbow flexor; brachialis, brachioradialis and grip are omitted from the compact highlight, not inactive."
+  },
+  "band-pull": {
+    "primary": [
+      "upper_back",
+      "posterior_deltoids"
+    ],
+    "support": [
+      "upper_traps"
+    ],
+    "label": "Upper back · Rear delts",
+    "role": "strength",
+    "sources": [
+      "M17",
+      "M18",
+      "M07"
+    ],
+    "note": "Standing horizontal pull-apart at chest height. Upper back means scapular-retractor region, especially middle trapezius and rhomboids, not the lats or lumbar back. Posterior deltoids must occupy the rear shoulder cap only. Rotator cuff also contributes; hand orientation and arm direction change measured recruitment, so no universal activation ranking is claimed."
+  }
+}

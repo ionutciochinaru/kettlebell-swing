@@ -1,0 +1,4 @@
+interface:
+  display_name: "Exercise Animation"
+  short_description: "Build clear, accurate exercise animation guides"
+  default_prompt: "Use $exercise-animation to create accurate, polished exercise demonstrations with independent form, visual, and anatomy review."

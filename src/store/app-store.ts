@@ -1,0 +1,142 @@
+/**
+ * Local-first app state. Everything lives on the device (SQLite-backed
+ * localStorage on iOS/Android, browser localStorage on web) and works fully
+ * offline. When signed in, lib/sync.ts mirrors it to Supabase.
+ */
+import 'expo-sqlite/localStorage/install';
+
+import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
+
+import { initialPrescription, targetReps, type Effort, type Prescription } from '@/core/progression';
+import { applyProgression, type SessionLog, type SetEntry } from '@/core/session';
+import type { LoadPlan } from '@/core/timeline';
+import type { Workout } from '@/core/workouts';
+
+export type AuthMode = 'offline' | 'account';
+export type Units = 'kg' | 'lb';
+
+export type Settings = {
+  units: Units;
+  /** Kettlebells you own, in kg. Progression only moves between these. */
+  bells: number[];
+  haptics: boolean;
+};
+
+type State = {
+  authMode?: AuthMode;
+  settings: Settings;
+  prescriptions: Record<string, Prescription>;
+  sessions: SessionLog[];
+  customWorkouts: Workout[];
+  /** Session ids already uploaded, and when app state last changed / synced. */
+  syncedSessionIds: string[];
+  stateUpdatedAt: string;
+  lastSyncedAt?: string;
+};
+
+type Actions = {
+  setAuthMode: (mode: AuthMode | undefined) => void;
+  updateSettings: (patch: Partial<Settings>) => void;
+  setPrescriptionLoad: (exercise: string, load: number) => void;
+  loadPlan: () => LoadPlan;
+  saveSession: (input: {
+    workout: Workout;
+    startedAt: string;
+    entries: SetEntry[];
+    amrapRounds: Record<number, number>;
+    effort: Record<string, Effort>;
+  }) => SessionLog;
+  deleteSession: (id: string) => void;
+  mergeRemote: (remote: { sessions: SessionLog[]; state?: RemoteState }) => void;
+  markSynced: (ids: string[]) => void;
+};
+
+export type RemoteState = Pick<State, 'settings' | 'prescriptions' | 'customWorkouts' | 'stateUpdatedAt'>;
+
+export const DEFAULT_SETTINGS: Settings = { units: 'kg', bells: [8, 12, 16, 20, 24], haptics: true };
+
+const now = () => new Date().toISOString();
+const newId = () => `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+
+export const useApp = create<State & Actions>()(
+  persist(
+    (set, get) => ({
+      settings: DEFAULT_SETTINGS,
+      prescriptions: {},
+      sessions: [],
+      customWorkouts: [],
+      syncedSessionIds: [],
+      stateUpdatedAt: now(),
+
+      setAuthMode: (authMode) => set({ authMode }),
+
+      updateSettings: (patch) => set((s) => ({ settings: { ...s.settings, ...patch }, stateUpdatedAt: now() })),
+
+      setPrescriptionLoad: (exercise, load) =>
+        set((s) => {
+          const prev = s.prescriptions[exercise] ?? initialPrescription(exercise, s.settings.bells);
+          return {
+            prescriptions: { ...s.prescriptions, [exercise]: { ...prev, load, missStreak: 0, easyStreak: 0 } },
+            stateUpdatedAt: now(),
+          };
+        }),
+
+      loadPlan: () => {
+        const { prescriptions, settings } = get();
+        return {
+          load: (exercise) => (prescriptions[exercise] ?? initialPrescription(exercise, settings.bells)).load,
+          reps: (exercise, range) =>
+            targetReps(prescriptions[exercise] ?? initialPrescription(exercise, settings.bells, range[0]), range),
+        };
+      },
+
+      saveSession: ({ workout, startedAt, entries, amrapRounds, effort }) => {
+        const { prescriptions, settings } = get();
+        const result = applyProgression(workout, entries, effort, prescriptions, settings.bells);
+        const log: SessionLog = {
+          id: newId(),
+          workoutId: workout.id,
+          workoutName: workout.name,
+          startedAt,
+          finishedAt: now(),
+          entries,
+          amrapRounds,
+          effort,
+          progress: result.progress,
+        };
+        set((s) => ({ sessions: [log, ...s.sessions], prescriptions: result.prescriptions, stateUpdatedAt: now() }));
+        return log;
+      },
+
+      deleteSession: (id) => set((s) => ({ sessions: s.sessions.filter((x) => x.id !== id), stateUpdatedAt: now() })),
+
+      mergeRemote: ({ sessions, state }) =>
+        set((s) => {
+          const known = new Set(s.sessions.map((x) => x.id));
+          const merged = [...s.sessions, ...sessions.filter((x) => !known.has(x.id))].sort((a, b) =>
+            b.startedAt.localeCompare(a.startedAt),
+          );
+          const remoteNewer = state && state.stateUpdatedAt > s.stateUpdatedAt;
+          return {
+            sessions: merged,
+            syncedSessionIds: [...new Set([...s.syncedSessionIds, ...sessions.map((x) => x.id)])],
+            ...(remoteNewer ? state : {}),
+            lastSyncedAt: now(),
+          };
+        }),
+
+      markSynced: (ids) => set((s) => ({ syncedSessionIds: [...new Set([...s.syncedSessionIds, ...ids])], lastSyncedAt: now() })),
+    }),
+    {
+      name: 'kettlebell-swing',
+      version: 1,
+      storage: createJSONStorage(() => localStorage),
+    },
+  ),
+);
+
+export function formatLoad(kg: number, units: Units): string {
+  if (!kg) return 'Bodyweight';
+  return units === 'kg' ? `${kg} kg` : `${Math.round(kg * 2.20462)} lb`;
+}
