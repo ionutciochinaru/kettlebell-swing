@@ -1,0 +1,219 @@
+{
+  "role": "form",
+  "revision": "ff146f3a9d79",
+  "reviewedAt": "2026-09-29T15:34:16+00:00",
+  "method": "Read review-rubric.md, form-contracts.md, contracts.json and the exercises.ts cues. Inspected all 14 contact sheets (4 views x 8 phases; 16 phases for the get-up) and enlarged individual frames at the key phases (backswing, top, rack, lockout, bottom, get-up stages). Used geometry.json (no validator failures) and read positions from the exported clip JSON (assets/animations/*.json) for the backswing bell depth, rack/curl bell position and get-up torso height to confirm what I saw. Not observed: real-time playback, timing, easing, loop-seam smoothness or native-size viewing; these are recorded as unrun. Did not refetch external primary sources; technique judgments rely on the stated contracts/cues and standard kettlebell coaching.",
+  "exercises": {
+    "kb-swing": {
+      "score": 8,
+      "confidence": "high",
+      "summary": "Reads clearly as a two-hand hardstyle swing: the bell is hiked behind the heels between the thighs, the hips snap to a tall stance, the bell floats to about chest height on long arms, and the lifter stays tall until the arms reconnect before hinging again. The load reads as swung, not lifted.",
+      "defects": [
+        {
+          "phase": "0.000",
+          "view": "left",
+          "issue": "The head and neck drop forward and down in the backswing rather than following the spine. This is minor and does not change the lesson.",
+          "fix": "Keep the neck in line with the torso in the hinge, with the gaze a few metres ahead on the floor."
+        }
+      ]
+    },
+    "kb-deadlift": {
+      "score": 8,
+      "confidence": "medium",
+      "summary": "A clear two-hand floor deadlift: the bell sits between the feet, both hands stay on the handle with straight arms, the lifter stands tall and returns the bell to the floor for a reset. It reads as a lift, not a curl.",
+      "defects": [
+        {
+          "phase": "0.000",
+          "view": "left",
+          "issue": "In the bottom position the bell sits at the toe line, forward of the ankles, with a fairly squat-like knee bend. This slightly contradicts the cue 'bell between the feet, under the hips'.",
+          "fix": "Set the bell at mid-foot under the hips and shift a little more of the depth into hip flexion (shins more vertical)."
+        }
+      ]
+    },
+    "goblet-squat": {
+      "score": 8,
+      "confidence": "high",
+      "summary": "A convincing goblet squat: the bell is held by the horns close to the chest throughout, knees track over the toes (front view), the feet stay flat, depth is comfortable with a reasonably tall chest, and the lifter stands fully.",
+      "defects": [
+        {
+          "phase": "0.500",
+          "view": "left",
+          "issue": "The torso leans forward noticeably at the bottom and the bell drifts slightly off the sternum. This is within normal variation.",
+          "fix": "Optionally keep the chest a little more upright at depth so it matches 'keep a tall chest'."
+        }
+      ]
+    },
+    "kb-reverse-lunge": {
+      "score": 8,
+      "confidence": "high",
+      "summary": "A clear alternating goblet reverse lunge: a rearward step, the front foot stays planted (support drift 0), the back knee lowers under the hip with the torso upright, the lifter returns to standing, then switches sides at phase 0.5 with a symmetric second rep.",
+      "defects": []
+    },
+    "kb-side-lunge": {
+      "score": 8,
+      "confidence": "high",
+      "summary": "A clear alternating goblet lateral lunge from a wide stance: the hips sit back over one bent knee while the other leg stays long, feet stay flat, the lifter returns to centre and repeats on the other side. The bell stays at the chest.",
+      "defects": [
+        {
+          "phase": "0.250/0.750",
+          "view": "threequarter",
+          "issue": "The hips sit back only moderately. The shift reads mostly as sideways knee bend.",
+          "fix": "Optionally add a little more hip hinge at the bottom so it matches 'sit the hips back'."
+        }
+      ]
+    },
+    "kb-upright-row": {
+      "score": 5,
+      "confidence": "high",
+      "summary": "The lift and lower are present, but the top position contradicts the stated variant and cue. The elbows rise well above shoulder height and the bell travels out in front of the chest, not close to the body.",
+      "defects": [
+        {
+          "phase": "0.375-0.625",
+          "view": "front",
+          "issue": "At the top the elbows sit at about ear/head height while the hands are only at the sternum, so the upper arms point upward. The contract says 'elbows below shoulders' and the cue says 'usually below the shoulders'. This teaches an aggressive, impingement-prone end range.",
+          "fix": "Stop the pull with the elbows at or just below shoulder height and the hands at lower-chest height, with the elbows leading out to the sides."
+        },
+        {
+          "phase": "0.500",
+          "view": "left",
+          "issue": "From the side the bell hangs about 15–20 cm in front of the chest, with the upper arms flexed forward. This reads like a front raise or high pull rather than a close vertical row ('keeping the bell close').",
+          "fix": "Keep the bell path vertical, a few centimetres from the torso, and drive the elbows up and out to the sides, not forward."
+        }
+      ]
+    },
+    "kb-bent-row": {
+      "score": 7,
+      "confidence": "medium",
+      "summary": "It is recognizable as a two-hand bent-over row: a stable hinge, straight arms at the bottom, and a pull with the elbows moving behind the torso. However, the pull ends at the hip crease/belly and the hinge is fairly upright, so it only partly matches 'row toward the lower ribs'.",
+      "defects": [
+        {
+          "phase": "0.500",
+          "view": "left",
+          "issue": "At the top the bell reaches only the belt line/upper thigh, not the lower ribs. The torso is only about 45° from vertical, which makes the movement read partly as a shrug-curl.",
+          "fix": "Hinge further (torso closer to 30–45° above horizontal) and pull the bell to the lower ribs, with the elbows driving back past the torso."
+        },
+        {
+          "phase": "0.500",
+          "view": "front",
+          "issue": "The elbows flare laterally rather than travelling back along the ribs.",
+          "fix": "Keep the elbows closer to the sides as they drive back."
+        }
+      ]
+    },
+    "kb-side-bend": {
+      "score": 7,
+      "confidence": "medium",
+      "summary": "The side bend toward the bell in the left hand, with the right hand on the hip, is present and there is no forward lean. However, the bell hangs away from the thigh instead of sliding down it, and the free hand drifts off the hip at the bottom.",
+      "defects": [
+        {
+          "phase": "0.375-0.625",
+          "view": "front",
+          "issue": "The bell hangs several centimetres outboard of the thigh throughout (it does not 'slide down the outer thigh', as the cue and contract say). The right hand lifts off the hip with the elbow flared at maximum bend.",
+          "fix": "Keep the bell in contact with the outer thigh as it lowers toward the knee, and keep the right palm fixed on the hip through the whole bend."
+        },
+        {
+          "phase": "0.500",
+          "view": "front",
+          "issue": "The range is modest and part of the tilt comes from the head and shoulders.",
+          "fix": "Show a slightly larger lateral flexion through the trunk, with the head staying in line."
+        }
+      ]
+    },
+    "kb-curl": {
+      "score": 7,
+      "confidence": "medium",
+      "summary": "A clear single-arm left curl: the elbow stays pinned beside the ribs (shoulder/elbow depth stays constant), with full flexion and a slow lowering. However, the bell does not hang as a weighted object near the top of the curl.",
+      "defects": [
+        {
+          "phase": "0.375-0.625",
+          "view": "left",
+          "issue": "Near the top the bell ball sits about 14 cm ahead of the wrist and only slightly below it, projecting forward from the hand as if rigid. A handle-held 16 kg bell would hang under the hand or rest against the forearm, so the load stops reading as heavy.",
+          "fix": "Orient the bell so the ball hangs below the handle (or rests on the forearm in a bottoms-down/horn grip) through the upper half of the curl."
+        }
+      ]
+    },
+    "kb-halo": {
+      "score": 8,
+      "confidence": "medium",
+      "summary": "A convincing alternating halo: the bell is upside down by the horns at a front reset, circles close around the head with the elbows raised behind, returns to the front, then reverses direction for the second circle. The torso and feet stay steady.",
+      "defects": [
+        {
+          "phase": "0.125/0.375",
+          "view": "threequarter",
+          "issue": "At the sides the bell passes close to the ear at head level. This is acceptable, but I could not verify how smooth the circle is from 8 stills.",
+          "fix": "None required. Confirm in playback that the bell path stays circular without stalls."
+        }
+      ]
+    },
+    "kb-clean": {
+      "score": 6,
+      "confidence": "medium",
+      "summary": "The hike (the bell goes behind the heels), hip snap and landing in a rack are present, so it is recognizable as a clean. However, the rack is held away from the body and the upswing casts the bell out like a swing, so it does not teach the close elbow-in path or the supported rack.",
+      "defects": [
+        {
+          "phase": "0.000/0.875",
+          "view": "left",
+          "issue": "In the rack the hand is about 20 cm ahead of the shoulder and the elbow is in front of the torso, not tucked to the ribs. The bell projects forward of the hand in side view instead of resting against the forearm and chest. This contradicts 'elbow tucked, bell resting outside the forearm'.",
+          "fix": "Bring the wrist in to the collarbone/chin line, tuck the elbow onto the ribs or hip crest, and seat the ball against the outside of the forearm and the chest."
+        },
+        {
+          "phase": "0.625",
+          "view": "left",
+          "issue": "After the hip snap the arm is fully extended with the bell about 35 cm forward at hip height, like a swing float, before the pull begins. This teaches casting rather than 'pull the elbow back and in'.",
+          "fix": "Once the hips extend, bend the elbow early and keep the bell close to the body on a short, vertical path into the rack."
+        }
+      ]
+    },
+    "kb-press": {
+      "score": 7,
+      "confidence": "medium",
+      "summary": "A clear single-arm strict press: the lifter starts from the rack, the forearm stays roughly vertical under the bell as it rises, and the lockout is straight with the biceps by the ear and the bell on the back of the forearm, followed by a controlled lowering and no leg drive. The rack start/finish has the same forward-held defect as the clean.",
+      "defects": [
+        {
+          "phase": "0.000/0.875",
+          "view": "left",
+          "issue": "In the rack the bell sits in front of the shoulder with the elbow forward and away from the ribs, rather than seated against the forearm and chest.",
+          "fix": "Use a tight rack: wrist at the collarbone, elbow on the ribs, bell resting outside the forearm."
+        },
+        {
+          "phase": "all",
+          "view": "front/left",
+          "issue": "The knees stay visibly soft for the whole press. This fits the brace/glute cue less well.",
+          "fix": "Straighten the knees (glutes locked) during the press."
+        }
+      ]
+    },
+    "kb-snatch": {
+      "score": 7,
+      "confidence": "medium",
+      "summary": "A convincing single-arm snatch: the bell is hiked behind the heels, the hips drive, the elbow pulls high with the bell close, the hand punches through, and the lockout is overhead with the bell on the back of the forearm. The drop from lockout is the weak phase.",
+      "defects": [
+        {
+          "phase": "0.250",
+          "view": "left",
+          "issue": "On the drop the arm swings out to horizontal with the bell resting on top of the hand about 40 cm in front at shoulder height. The bell reads as balanced rather than turning over and falling, so it partly contradicts 'turn the bell over and let it fall'.",
+          "fix": "Show the bell turning over near the head and falling close to the body into the hinge, rather than arcing out on a straight arm."
+        }
+      ]
+    },
+    "kb-getup": {
+      "score": 6,
+      "confidence": "high",
+      "summary": "The middle of the get-up is good: post on the hand, a high bridge, a straight-leg sweep to a half-kneel with the shin pointing back, an upright half-kneel, a tall split stance with the back toes planted, and a mirrored descent, all with the bell arm vertical. However, the loop never lies down. It starts and ends propped on the right elbow (chest height ≥ about 40 cm in every frame), so the floor start and the roll to the elbow, which are the first cues, are never shown.",
+      "defects": [
+        {
+          "phase": "0.000/0.938",
+          "view": "all",
+          "issue": "Phase 0 is already on the elbow with the torso raised. The contract's first phase 'Lie with the bell pressed; roll onto the planted right elbow' and the counting 'back down' are missing, so the viewer never sees the start or finish position of a rep.",
+          "fix": "Start and end each loop supine with the bell pressed up over the shoulder and the left knee bent, then show the roll to the right elbow (and the reverse at the end)."
+        },
+        {
+          "phase": "0.250",
+          "view": "front",
+          "issue": "During the sweep the torso pitches far forward over the posting hand, nearly horizontal. It reads more like crawling than a controlled hip-hinge sweep, though the knee lands correctly.",
+          "fix": "Keep the chest more open, facing the bell, as the leg sweeps under the hips."
+        }
+      ]
+    }
+  }
+}

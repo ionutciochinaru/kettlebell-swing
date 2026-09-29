@@ -1,0 +1,286 @@
+{
+ "role": "anatomy",
+ "revision": "ff146f3a9d79",
+ "reviewedAt": "2026-09-29T15:37:21+00:00",
+ "method": "Inspected all 14 contact sheets (front, threequarter, left, right) and enlarged individual frames; read geometry.json; probed the motions with python (pose_for, v2.body balance_report, v2.collide) at 120-960 samples per loop using real clip durations (halo 8 s from profiles.json) for knee/elbow angles and flexion-plane direction, trunk lean, COM/ZMP margins, capsule clearances incl. bell-head, bell hang angle relative to the handle, and bell/wrist velocity/acceleration. Could not watch playback at native size: timing, smoothness and loop seams were judged only from sampled kinematics. Reviewed independently without other scores.",
+ "exercises": {
+  "kb-swing": {
+   "score": 8,
+   "confidence": "medium",
+   "summary": "Physics-driven pendulum gives a credible hinge, float and free-fall return; the body+bell COM stays over mid-foot (COM margin >=0.119 m, ZMP >=0.109 m) and the bell reads as a 16 kg mass. Remaining issues are small.",
+   "defects": [
+    {
+     "phase": "0.375-0.625",
+     "view": "left",
+     "issue": "Top of the swing shows knees ~22 deg flexed (max knee angle 158 deg), so the hip/knee lockout at the float is soft rather than a tall plank.",
+     "fix": "Raise pelvis height at h=0 so the knees reach ~170-175 deg at the float."
+    },
+    {
+     "phase": "0.992",
+     "view": "front/left",
+     "issue": "Forearms overlap the inner-thigh capsules by 5 mm at the bottom of the hike (intended contact, cosmetically acceptable).",
+     "fix": "Optionally shift BACK_STOP slightly so contact is tangent, not overlapping."
+    }
+   ]
+  },
+  "kb-deadlift": {
+   "score": 7,
+   "confidence": "high",
+   "summary": "Credible floor-to-lockout lift with the bell on a vertical path between the feet, neutral spine and good load-aware balance (COM margin >=0.118 m). The lockout is not a true lockout and the arms are not long.",
+   "defects": [
+    {
+     "phase": "0.48-0.60",
+     "view": "left/right",
+     "issue": "Standing/lockout posture keeps the knees ~30 deg flexed (hip-knee-ankle 150 deg): hips sit ~4 cm below full height because the stance width plus fixed pelvis height leave the legs short of extension, so the lift never visibly finishes tall.",
+     "fix": "Raise the standing pelvis height per stance (or narrow the ankle offset) so the knee reaches >=170 deg at lockout/standing, keeping heels planted."
+    },
+    {
+     "phase": "all",
+     "view": "front/threequarter",
+     "issue": "Elbows are held at a constant 154 deg (26 deg flexion) throughout, so the arms look slightly bent instead of hanging long under a 16 kg load.",
+     "fix": "Use the full reach (or model the grip at the palm) so elbows are ~170 deg with arms plumb."
+    },
+    {
+     "phase": "0.475",
+     "view": "front",
+     "issue": "Forearm capsules overlap the thighs by 2.0 cm and upper arms by 0.5 cm at lockout (allowlisted contact but visibly pushing into the legs).",
+     "fix": "Widen the grip lateral offset or narrow the thigh path so the arms rest tangent to the thighs."
+    }
+   ]
+  },
+  "goblet-squat": {
+   "score": 7,
+   "confidence": "high",
+   "summary": "Deep squat is well articulated: knees track the toes, heels down, torso <=30 deg forward, elbows inside the knees, balance margin >=0.09 m. The top position is a partial stand.",
+   "defects": [
+    {
+     "phase": "0.0/0.875",
+     "view": "left/right",
+     "issue": "Standing/lockout posture keeps the knees ~36 deg flexed (hip-knee-ankle 144 deg): hips sit ~4 cm below full height because the stance width plus fixed pelvis height leave the legs short of extension, so the lift never visibly finishes tall.",
+     "fix": "Raise the standing pelvis height per stance (or narrow the ankle offset) so the knee reaches >=170 deg at lockout/standing, keeping heels planted."
+    },
+    {
+     "phase": "0.0",
+     "view": "threequarter",
+     "issue": "Bell overlaps both forearms by 1.3 cm in the goblet hold (allowlisted contact, minor).",
+     "fix": "Move the bell 1-2 cm forward from the chest or adjust horns height."
+    }
+   ]
+  },
+  "kb-reverse-lunge": {
+   "score": 7,
+   "confidence": "medium",
+   "summary": "Good lunge geometry (vertical front shin, rear knee ~3 cm above floor, rear heel lifted, upright trunk) with a pre-step weight shift and pinned feet. Balance during the single-leg step phases is marginal and standing between reps is a crouch.",
+   "defects": [
+    {
+     "phase": "0.10-0.15, 0.42-0.45 (mirrored 0.60-0.65, 0.92-0.95)",
+     "view": "front",
+     "issue": "During single-leg stance the static COM is 0-2 cm outside the stance foot (min -0.020 m at 0.45) and the ZMP only 3-4 cm inside; dynamically valid but the body looks like it is tipping as the rear foot leaves/returns.",
+     "fix": "Shift the pelvis further over the stance foot before lift-off and hold it until touchdown so the COM margin is >=3 cm."
+    },
+    {
+     "phase": "0.0/0.5",
+     "view": "left",
+     "issue": "Standing/lockout posture keeps the knees ~36 deg flexed (hip-knee-ankle 144 deg): hips sit ~4 cm below full height because the stance width plus fixed pelvis height leave the legs short of extension, so the lift never visibly finishes tall.",
+     "fix": "Raise the standing pelvis height per stance (or narrow the ankle offset) so the knee reaches >=170 deg at lockout/standing, keeping heels planted."
+    }
+   ]
+  },
+  "kb-side-lunge": {
+   "score": 8,
+   "confidence": "medium",
+   "summary": "Lateral weight shift with a planted wide stance: bent knee tracks the toes, trailing leg straight with flat foot, upright trunk, balance margin >=0.10 m. Credible for the represented (non-stepping) variant.",
+   "defects": [
+    {
+     "phase": "0.25/0.75",
+     "view": "front",
+     "issue": "Trunk stays nearly vertical (lean <=24 deg) with the goblet bell; a slight forward hip hinge would better counterbalance the load at depth (minor).",
+     "fix": "Allow 5-10 deg more forward trunk lean at the bottom."
+    }
+   ]
+  },
+  "kb-upright-row": {
+   "score": 7,
+   "confidence": "high",
+   "summary": "Arm path, elbow-above-hand pull and bell hanging plumb are credible and balance is fine. The whole set is performed in a quarter-squat.",
+   "defects": [
+    {
+     "phase": "all",
+     "view": "left/right",
+     "issue": "Standing/lockout posture keeps the knees ~39 deg flexed (hip-knee-ankle 141 deg): hips sit ~4 cm below full height because the stance width plus fixed pelvis height leave the legs short of extension, so the lift never visibly finishes tall.",
+     "fix": "Raise the standing pelvis height per stance (or narrow the ankle offset) so the knee reaches >=170 deg at lockout/standing, keeping heels planted."
+    }
+   ]
+  },
+  "kb-bent-row": {
+   "score": 8,
+   "confidence": "high",
+   "summary": "Stable 50 deg hinge with fixed pelvis, neutral head/spine, plumb hanging bell, elbows driving back past the torso and clearances >=2.8 cm. Credible reference.",
+   "defects": [
+    {
+     "phase": "0.5",
+     "view": "left",
+     "issue": "Row top shows elbows only modestly behind the torso line; acceptable, no anatomical defect.",
+     "fix": "None required."
+    }
+   ]
+  },
+  "kb-side-bend": {
+   "score": 7,
+   "confidence": "medium",
+   "summary": "Lateral trunk flexion toward the bell with a pelvis counter-shift reads correctly and balance is good, but posture artifacts remain.",
+   "defects": [
+    {
+     "phase": "all",
+     "view": "front/right",
+     "issue": "Standing/lockout posture keeps the knees ~35 deg flexed (hip-knee-ankle 145 deg): hips sit ~4 cm below full height because the stance width plus fixed pelvis height leave the legs short of extension, so the lift never visibly finishes tall.",
+     "fix": "Raise the standing pelvis height per stance (or narrow the ankle offset) so the knee reaches >=170 deg at lockout/standing, keeping heels planted."
+    },
+    {
+     "phase": "0.375-0.625",
+     "view": "front",
+     "issue": "The free (right) hand leaves the hip and floats with the upper arm abducted near horizontal as the trunk tilts, so the 'hand on hip' support is lost.",
+     "fix": "Pin the free palm to the pelvis/iliac crest in pelvis space so it stays on the hip through the bend."
+    },
+    {
+     "phase": "0.5",
+     "view": "front",
+     "issue": "The spine bends as one rigid block from the pelvis (single trunk segment), so lateral flexion looks like a whole-trunk tilt rather than a lumbar curve.",
+     "fix": "Distribute bend over a lumbar/thoracic split if the rig allows; otherwise limit the pelvis shift so the tilt reads as spinal."
+    }
+   ]
+  },
+  "kb-curl": {
+   "score": 6,
+   "confidence": "high",
+   "summary": "Elbow stays at the flank and flexion is credible, but the bell does not obey gravity on its handle and the stance is crouched.",
+   "defects": [
+    {
+     "phase": "0.25-0.625",
+     "view": "left/right",
+     "issue": "At the top the bell centre is held 62-65 deg off plumb from the handle with 3.5 cm clearance to the forearm, i.e. cantilevered in space; this needs ~23 N.m of wrist torque and reads as weightless.",
+     "fix": "Either let the bell hang plumb from the handle or rest it on the forearm (contact) as in a standard KB curl."
+    },
+    {
+     "phase": "0.0-0.125",
+     "view": "threequarter/front",
+     "issue": "At the bottom the bell is tilted 27 deg off plumb and still overlaps the thigh capsule by 1.8 cm.",
+     "fix": "Move the hanging hand slightly outward/forward so a plumb bell clears the thigh."
+    },
+    {
+     "phase": "all",
+     "view": "left",
+     "issue": "Standing/lockout posture keeps the knees ~39 deg flexed (hip-knee-ankle 141 deg): hips sit ~4 cm below full height because the stance width plus fixed pelvis height leave the legs short of extension, so the lift never visibly finishes tall.",
+     "fix": "Raise the standing pelvis height per stance (or narrow the ankle offset) so the knee reaches >=170 deg at lockout/standing, keeping heels planted."
+    }
+   ]
+  },
+  "kb-halo": {
+   "score": 8,
+   "confidence": "medium",
+   "summary": "Horns-grip orbit is anatomically credible: bottom-up in front, hanging behind the head with elbows raised, arms clear of the head (bell-head >=2.6 cm), steady tall stance and ample balance margin at the 8 s timing.",
+   "defects": [
+    {
+     "phase": "all",
+     "view": "left",
+     "issue": "The legacy (non-v2) motion keeps pelvis and chest perfectly static while 16 kg travels ~0.58 m front-to-back; balance stays valid (COM shift ~2.5 cm) but no subtle counter-lean shows the load.",
+     "fix": "Optionally run it through the load-aware Lift balance to add a 1-2 cm hip counter-shift."
+    },
+    {
+     "phase": "0.175/0.325",
+     "view": "threequarter",
+     "issue": "Palms overlap the bell by 0.9 cm (grip contact, minor).",
+     "fix": "Tangent-fit the horn grip."
+    }
+   ]
+  },
+  "kb-clean": {
+   "score": 6,
+   "confidence": "high",
+   "summary": "Hinge, backswing between the knees and rack geometry are credible and balance is good, but the bell is spline-driven, so its motion does not show ballistic momentum.",
+   "defects": [
+    {
+     "phase": "0.14-0.19",
+     "view": "left/right",
+     "issue": "Leaving the rack the bell is driven down at up to 22 m/s^2 (>2 g) for ~0.1 s, so it is yanked down rather than dropped.",
+     "fix": "Limit the rack-to-backswing descent to <=g (let the bell fall and guide it), e.g. with a pendulum/physics pass like the swing."
+    },
+    {
+     "phase": "0.50-0.67",
+     "view": "left",
+     "issue": "After the hip snap the bell slows from ~1.6 to 0.56 m/s at 0.60 (hips already extended) and then re-accelerates to 1.1 m/s, implying an arm curl instead of hip-driven momentum; bell-orientation keys also produce 60+ m/s^2 spikes.",
+     "fix": "Make hip extension the peak acceleration and let the bell decelerate monotonically into the rack; derive bell tilt from grip acceleration rather than keys."
+    },
+    {
+     "phase": "0.625",
+     "view": "left",
+     "issue": "The arm and bell swing ~40 deg out in front on the ascent, far from the body for a clean.",
+     "fix": "Keep the elbow closer to the ribs so the bell rises near the body."
+    }
+   ]
+  },
+  "kb-press": {
+   "score": 6,
+   "confidence": "high",
+   "summary": "Rack, wrist-over-elbow path and lockout with the bell on the back of the forearm are credible; balance is fine. The load dynamics are not those of a grind.",
+   "defects": [
+    {
+     "phase": "0.30-0.44",
+     "view": "left/front",
+     "issue": "The wrist accelerates into lockout (0.58 -> 1.08 m/s at ~0.37) and the bell whips over the wrist (tilt 72 -> 107 -> 92 deg; bell speed 1.9 m/s, 48 m/s^2 up then -21 m/s^2) before settling; a strict press with 16 kg slows near lockout and the bell stays fixed on the forearm.",
+     "fix": "Use a decelerating (min-jerk) press to lockout and keep the bell's forearm-relative angle fixed during the press."
+    },
+    {
+     "phase": "0.62-0.73",
+     "view": "left",
+     "issue": "The same bell flip-over repeats on the descent (tilt 94 -> 112 -> 83 deg).",
+     "fix": "Hold the bell orientation on the forearm while lowering to the rack."
+    }
+   ]
+  },
+  "kb-snatch": {
+   "score": 7,
+   "confidence": "medium",
+   "summary": "Backswing, hip drive, high pull, punch-through wide of the head (bell-head >=14 cm) and overhead lockout are credible with good balance; the bell flip-over on the drop is plausible. Momentum is still authored.",
+   "defects": [
+    {
+     "phase": "0.56-0.62",
+     "view": "left",
+     "issue": "Keyed bell orientation produces vertical bell acceleration spikes up to 77 m/s^2 at the hip drive, larger than the hand motion supports, so the bell appears to snap rather than be thrown.",
+     "fix": "Drive bell tilt from grip acceleration (as in the swing sim) or smooth the orientation keys."
+    },
+    {
+     "phase": "0.47-0.50",
+     "view": "left/front",
+     "issue": "Upper arm and bell overlap the thigh capsules by 0.2-0.7 cm in the backswing (minor).",
+     "fix": "Shift the backswing hand 1 cm medially/back."
+    }
+   ]
+  },
+  "kb-getup": {
+   "score": 7,
+   "confidence": "medium",
+   "summary": "Strong support logic: bell arm stays exactly vertical throughout, contacts (buttock, elbow, palm, knee, feet) are pinned with zero drift, and COM/ZMP stay inside the support. Some transitions remain questionable.",
+   "defects": [
+    {
+     "phase": "0.74-0.76",
+     "view": "front/threequarter",
+     "issue": "During the leg sweep back to the bridge the right shin points up/forward while the thigh points down-out; the knee's flexion plane flips relative to the hip axis, requiring >90 deg hip rotation, so the knee briefly reads as bending sideways.",
+     "fix": "Sweep the leg with the knee leading under the hips (shin trailing behind the knee) so knee flexion stays in the sagittal plane."
+    },
+    {
+     "phase": "0.0-0.10, 0.875-1.0",
+     "view": "front",
+     "issue": "Balance margin on the elbow post is only 1.2 cm (COM near the edge of the buttock/elbow/foot polygon).",
+     "fix": "Shift the trunk slightly toward the posting elbow so the COM sits >=3 cm inside."
+    },
+    {
+     "phase": "all",
+     "view": "left",
+     "issue": "Head is rigidly fixed in line with the trunk (neck never rotates), so the gaze cannot track the bell; anatomically possible but stiff.",
+     "fix": "Add neck rotation/extension to keep eyes on the bell."
+    }
+   ]
+  }
+ }
+}

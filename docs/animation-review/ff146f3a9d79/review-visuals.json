@@ -1,0 +1,256 @@
+{
+  "role": "visuals",
+  "revision": "ff146f3a9d79",
+  "reviewedAt": "2026-09-29T15:32:01+00:00",
+  "method": "Inspected all 14 contact sheets (front, threequarter, left, right rows; 8 phases, 16 for get-up) and enlarged native 480x480 frames for key phases of every exercise; cross-checked geometry.json clearances and read figure.ts, hand-model.ts, kettlebell-model.ts and contracts.json. Could not observe playback: timing, pacing and loop smoothness not directly observed (geometry reports sub-mm loop seams). Views between the four sampled angles and phases between samples were not inspected.",
+  "exercises": {
+    "kb-swing": {
+      "score": 8,
+      "confidence": "high",
+      "summary": "Clearest clip in the set: hinge, hip drive and chest-height float read in every view; the dark bell hangs convincingly below long arms and differentiates it from the deadlift.",
+      "defects": [
+        {
+          "phase": "0.992",
+          "view": "front",
+          "issue": "Forearms graze the thighs (-5 mm) at the bottom of the backswing; hands and bell merge into one blob between the knees in the front view",
+          "fix": "Widen the backswing path by ~1 cm so forearms clear the thighs; optional minor"
+        }
+      ]
+    },
+    "kb-deadlift": {
+      "score": 7,
+      "confidence": "medium",
+      "summary": "Floor start, stand and floor reset are readable and the bell visibly touches the floor between the feet; arm/thigh interpenetration near lockout is the remaining visible defect.",
+      "defects": [
+        {
+          "phase": "0.475",
+          "view": "left",
+          "issue": "Forearms sink ~2 cm into the thighs as the figure stands (upper arms -1 cm at 0.95); arms and thighs fuse into one silhouette in side views",
+          "fix": "Move the hang path or shoulders forward slightly so arms rest on, not inside, the thigh surface"
+        },
+        {
+          "phase": "0.000",
+          "view": "front",
+          "issue": "At the floor position hands, handle and knees cluster tightly; grip reads only as two white blobs over the handle",
+          "fix": "Slightly widen stance/knee track or lower camera emphasis so the handle and both hands separate"
+        }
+      ]
+    },
+    "goblet-squat": {
+      "score": 8,
+      "confidence": "high",
+      "summary": "Goblet hold at the chest is obvious in all views, depth and upright torso read clearly, and feet stay planted.",
+      "defects": [
+        {
+          "phase": "0.517",
+          "view": "left",
+          "issue": "Upper arms touch the thighs at depth (-4.5 mm), minor merge of elbow and knee silhouettes",
+          "fix": "Tuck elbows a few mm inside the knees or reduce depth slightly"
+        }
+      ]
+    },
+    "kb-reverse-lunge": {
+      "score": 8,
+      "confidence": "medium",
+      "summary": "Step-back, rear-knee drop and alternation are clear in three-quarter and side views; goblet hold stays readable.",
+      "defects": [
+        {
+          "phase": "0.250/0.750",
+          "view": "front",
+          "issue": "The rear leg hides behind the front leg, so the lunge reads as a shallow one-leg squat from the front",
+          "fix": "Acceptable for a sagittal lunge; optionally angle the stepping line a few degrees so the rear shin shows from the front"
+        }
+      ]
+    },
+    "kb-side-lunge": {
+      "score": 8,
+      "confidence": "medium",
+      "summary": "Wide stance and weight shift to each side are clear from front and three-quarter; nonworking leg stays long.",
+      "defects": [
+        {
+          "phase": "0.250/0.750",
+          "view": "left/right",
+          "issue": "From pure side views the lateral shift is invisible and the pose reads as a goblet squat",
+          "fix": "Inherent to a frontal-plane move; no change required, but default the camera to front/three-quarter for this exercise"
+        }
+      ]
+    },
+    "kb-upright-row": {
+      "score": 8,
+      "confidence": "medium",
+      "summary": "Bell travels close to the body to chest height with elbows leading; distinct from clean and curl in all views.",
+      "defects": [
+        {
+          "phase": "0.500",
+          "view": "front",
+          "issue": "At the top the elbows rise above shoulder level and the forearms/hands form a tight cluster over the upper chest, partly obscuring the bell handle",
+          "fix": "Stop the top a little lower (elbows at or just below shoulder height) so hands and handle stay separate from the shoulders"
+        }
+      ]
+    },
+    "kb-bent-row": {
+      "score": 7,
+      "confidence": "medium",
+      "summary": "Hinge and two-hand pull read in side and three-quarter views, but the pull amplitude is small and the front view barely changes.",
+      "defects": [
+        {
+          "phase": "0.500",
+          "view": "front",
+          "issue": "Bell only rises from knee to lower-thigh height; front view frames 0 and 0.5 look nearly identical and the clip is easily confused with a hinge hold/deadlift",
+          "fix": "Increase row travel so the bell reaches the lower ribs/navel and the elbows clearly pass the torso line"
+        },
+        {
+          "phase": "0.500",
+          "view": "left",
+          "issue": "Bell sits ~3 cm from the thigh at the top, visually overlapping it in side view",
+          "fix": "Draw the bell path slightly further from the thighs as it rises"
+        }
+      ]
+    },
+    "kb-side-bend": {
+      "score": 6,
+      "confidence": "medium",
+      "summary": "The lateral bend is visible from the front and three-quarter, but the bell does not ride the outer thigh, the free hand leaves the hip, and side views show almost nothing.",
+      "defects": [
+        {
+          "phase": "0.500",
+          "view": "front",
+          "issue": "Right hand drifts off the hip and floats beside the waist at the deepest bend, breaking the 'hand on hip' cue",
+          "fix": "Pin the right hand to the iliac crest throughout the bend"
+        },
+        {
+          "phase": "0.000-0.500",
+          "view": "front",
+          "issue": "Bell hangs 5-10 cm outside the thigh and tilts off plumb, so it neither slides down the outer thigh nor reads as a hanging weight",
+          "fix": "Keep the bell plumb under the handle and against the outer thigh as it slides down"
+        },
+        {
+          "phase": "all",
+          "view": "left/right",
+          "issue": "Side views show only a standing figure with the bell over the thigh; the bend is not legible",
+          "fix": "Increase bend amplitude slightly and default the camera to front/three-quarter for this exercise"
+        }
+      ]
+    },
+    "kb-curl": {
+      "score": 5,
+      "confidence": "high",
+      "summary": "The elbow-flexion arc is visible, but at the top the bell sticks out horizontally in front of the fist, defying gravity, and at the bottom it passes into the thigh.",
+      "defects": [
+        {
+          "phase": "0.375-0.625",
+          "view": "left",
+          "issue": "Bell body is cantilevered forward of the fist with the handle horizontal, at hand height; the weight looks glued on and weightless, and the forearm stops short of full flexion",
+          "fix": "Hang the bell body below the handle (or rest it against the forearm for a bottoms-down curl) and bring the forearm to full flexion near the shoulder"
+        },
+        {
+          "phase": "0.025",
+          "view": "left",
+          "issue": "Bell interpenetrates the front of the thigh by ~2 cm at the bottom",
+          "fix": "Offset the hang position so the bell clears the thigh by a few mm"
+        }
+      ]
+    },
+    "kb-halo": {
+      "score": 7,
+      "confidence": "medium",
+      "summary": "The circle around the head reads in three-quarter and side views and the horns grip is plausible, but the front view loses the bell behind the head and the action is small in a full-body frame.",
+      "defects": [
+        {
+          "phase": "0.250/0.750",
+          "view": "front",
+          "issue": "Bell disappears completely behind the head; only raised elbows are visible, so the rear pass is unreadable from the front",
+          "fix": "Keep the bell slightly lower/offset behind the head so part of the body shows, or apply the contract's upper-body crop so the loop fills the frame"
+        },
+        {
+          "phase": "all",
+          "view": "all",
+          "issue": "Full-body framing leaves the bell circle occupying a small area at 480 px; hands and horns are hard to resolve",
+          "fix": "Use the upper-body three-quarter crop the contract specifies"
+        }
+      ]
+    },
+    "kb-clean": {
+      "score": 6,
+      "confidence": "medium",
+      "summary": "Backswing, hip drive and rack are all present and distinct from swing/snatch, but the rack does not show the bell resting on the forearm and the arm clips the thigh.",
+      "defects": [
+        {
+          "phase": "0.000/0.875",
+          "view": "left",
+          "issue": "In the rack the bell body projects horizontally in front of the fist at chin height instead of resting on the outside of the forearm; it reads as floating",
+          "fix": "Orient the bell so the handle runs diagonally through the palm and the body hangs below/behind the handle against the back of the forearm (body centre below the handle, axis tilted), keeping the grip ring on the handle"
+        },
+        {
+          "phase": "0.383",
+          "view": "left",
+          "issue": "Upper arm passes ~1 cm into the thigh in the backswing",
+          "fix": "Keep the working arm on the thigh surface during the hinge"
+        }
+      ]
+    },
+    "kb-press": {
+      "score": 6,
+      "confidence": "high",
+      "summary": "Rack-to-lockout path is clear and differentiated, but the bell is drawn lying sideways at both rack and lockout, undermining weight and the 'back of forearm' cue.",
+      "defects": [
+        {
+          "phase": "0.500",
+          "view": "front",
+          "issue": "Bell body sits beside the fist at handle height with the handle horizontal, as if the bell were lying on its side in mid-air; it does not rest on the back of the forearm and reads weightless",
+          "fix": "Orient the bell so the handle runs diagonally through the palm and the body hangs below/behind the handle against the back of the forearm (body centre below the handle, axis tilted), keeping the grip ring on the handle"
+        },
+        {
+          "phase": "0.000",
+          "view": "left",
+          "issue": "Rack bell sits forward of the fist on a horizontal handle rather than against the forearm",
+          "fix": "Orient the bell so the handle runs diagonally through the palm and the body hangs below/behind the handle against the back of the forearm (body centre below the handle, axis tilted), keeping the grip ring on the handle"
+        }
+      ]
+    },
+    "kb-snatch": {
+      "score": 6,
+      "confidence": "medium",
+      "summary": "Lockout, drop, backswing and high pull are distinct from the clean and swing, but the lockout bell floats sideways and the bell grazes the thighs in the backswing.",
+      "defects": [
+        {
+          "phase": "0.000/0.875",
+          "view": "left",
+          "issue": "Bell body sits beside the fist at handle height with the handle horizontal, as if the bell were lying on its side in mid-air; it does not rest on the back of the forearm and reads weightless",
+          "fix": "Orient the bell so the handle runs diagonally through the palm and the body hangs below/behind the handle against the back of the forearm (body centre below the handle, axis tilted), keeping the grip ring on the handle"
+        },
+        {
+          "phase": "0.467",
+          "view": "threequarter",
+          "issue": "Bell intersects the far thigh (-4.6 mm) and the working upper arm the near thigh (-7 mm) in the backswing",
+          "fix": "Widen the backswing path so bell and arm pass between the thighs"
+        }
+      ]
+    },
+    "kb-getup": {
+      "score": 5,
+      "confidence": "medium",
+      "summary": "Major stages (post, bridge, sweep, half-kneel, stand) are recognisable in side views, but the loop never shows the supine start, the bell floats sideways overhead throughout, and front/three-quarter transitions tangle.",
+      "defects": [
+        {
+          "phase": "0.000",
+          "view": "all",
+          "issue": "Loop starts already propped on the hand; there is no lying-down frame, so the start of the get-up is not shown",
+          "fix": "Include the supine start with the bell pressed and floor contact of back and shoulders"
+        },
+        {
+          "phase": "all",
+          "view": "all",
+          "issue": "Bell body sits beside the fist at handle height with the handle horizontal, as if the bell were lying on its side in mid-air; it does not rest on the back of the forearm and reads weightless; the bell is the viewer's focus in this exercise",
+          "fix": "Orient the bell so the handle runs diagonally through the palm and the body hangs below/behind the handle against the back of the forearm (body centre below the handle, axis tilted), keeping the grip ring on the handle"
+        },
+        {
+          "phase": "0.250/0.6875",
+          "view": "front",
+          "issue": "During the bridge and sweep the head drops sideways and the support arm, far leg and torso overlap into an unreadable knot; support-hand contact is hard to see",
+          "fix": "Adjust the sweep path or the default camera so the posted hand, knee and planted foot separate in silhouette"
+        }
+      ]
+    }
+  }
+}
