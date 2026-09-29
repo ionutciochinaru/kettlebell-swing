@@ -17,9 +17,11 @@ import json
 from pathlib import Path
 
 try:
-    from .motions import pose_for
+    from .motions import pose_for, DURATIONS, V2_MOTIONS
+    from .validate import check_v2
 except ImportError:
-    from motions import pose_for
+    from motions import pose_for, DURATIONS, V2_MOTIONS
+    from validate import check_v2
 
 ROOT = Path(__file__).resolve().parents[2]
 PROFILES = json.loads((Path(__file__).parent / 'profiles.json').read_text())
@@ -42,7 +44,7 @@ def to_three(point):
 
 def export(exercise):
     profile = PROFILES[exercise]
-    duration = profile['frames'] / profile['fps']
+    duration = DURATIONS[exercise]() if exercise in DURATIONS else profile['frames'] / profile['fps']
     samples = max(24, round(duration * SAMPLE_FPS))
     frames, errors, view = [], 0, None
     for index in range(samples):
@@ -66,6 +68,10 @@ def export(exercise):
                        'b': bells})
     if errors:
         raise ValueError(f'{exercise}: {errors} IK errors; fix the motion before export')
+    if exercise in V2_MOTIONS:
+        _, failures = check_v2(exercise)
+        if failures:
+            raise ValueError(f'{exercise}: validator v2 failed: {failures}')
     return {'id': exercise, 'duration': round(duration, 3), 'joints': JOINTS,
             'view': {'azimuth': view.get('azimuth', 65), 'elevation': view.get('elevation', 8)},
             'contract': CONTRACTS.get(exercise), 'frames': frames}

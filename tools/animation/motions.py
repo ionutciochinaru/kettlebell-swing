@@ -334,3 +334,36 @@ except ImportError:
     from kb_advanced import ADVANCED_MOTIONS
 MOTIONS.update(ADVANCED_MOTIONS)
 IDS.extend(ADVANCED_MOTIONS)
+
+# Rig v2: physics-driven motions replace their keyframed versions.
+try:
+    from .v2.swing import kb_swing as kb_swing_v2, duration as swing_duration
+except ImportError:
+    from v2.swing import kb_swing as kb_swing_v2, duration as swing_duration
+try:
+    from .v2.lifts import LIFTS
+    from .v2.single_arm import SINGLE_ARM
+    from .v2.getup import GETUP
+except ImportError:
+    from v2.lifts import LIFTS
+    from v2.single_arm import SINGLE_ARM
+    from v2.getup import GETUP
+MOTIONS['kb-swing'] = kb_swing_v2
+V2_LIFTS = {**LIFTS, **SINGLE_ARM, GETUP.name: GETUP}
+MOTIONS.update(V2_LIFTS)
+V2_MOTIONS = {'kb-swing', *V2_LIFTS}
+# Loop length in seconds for motions whose timing comes from simulation or v2 authoring.
+DURATIONS = {'kb-swing': swing_duration, **{name: (lambda d=lift.duration: d) for name, lift in V2_LIFTS.items()}}
+# Intended contacts per motion: (pair substring, tolerance m).
+_GOBLET = {'bell0|forearm': .02, 'bell0|hand': .02}
+ALLOWED_CONTACT = {
+    'kb-swing': {'forearm_l|thigh_l': .025, 'forearm_r|thigh_r': .025},
+    # Forearms and hands hug the bell in goblet holds and the halo.
+    'goblet-squat': _GOBLET, 'kb-reverse-lunge': _GOBLET, 'kb-side-lunge': _GOBLET, 'kb-halo': _GOBLET,
+    # A hanging bell rests against the outer thigh.
+    'kb-side-bend': {'bell0|thigh_l': .02}, 'kb-curl': {'bell0|thigh_l': .02},
+    # Forearm brushes the belly at the hike.
+    'kb-clean': {'forearm_l|torso': .01}, 'kb-snatch': {'forearm_l|torso': .01},
+    # Hanging arms rest against the front of the thighs at lockout.
+    'kb-deadlift': {'forearm_l|thigh_l': .02, 'forearm_r|thigh_r': .02, 'hand_l|thigh_l': .02, 'hand_r|thigh_r': .02},
+}

@@ -54,7 +54,7 @@ export default function AnimationReview() {
   return <ReviewPage initial={params.clip} />;
 }
 
-type CaptureState = { clip: string; phase: number; az: number; el: number };
+type CaptureState = { clip: string; phase: number; az: number; el: number; zoom?: number; focus?: string };
 
 /** Full-bleed figure only. On web, scripts can call window.__capture({...}) to repose without reloading. */
 function Capture({ initial }: { initial: CaptureState }) {
@@ -75,6 +75,8 @@ function Capture({ initial }: { initial: CaptureState }) {
         controls={false}
         phase={state.phase}
         view={{ azimuth: state.az, elevation: state.el }}
+        zoom={state.zoom}
+        focus={state.focus}
         style={styles.captureViewer}
       />
     </View>

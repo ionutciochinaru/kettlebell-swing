@@ -23,9 +23,13 @@ type SceneProps = {
   /** Fixed loop position in [0, 1); overrides playback. */
   phase?: number;
   onPhase?: (phase: number) => void;
+  /** Camera distance multiplier (1 = whole motion in frame). */
+  zoom?: number;
+  /** Joint to centre on (e.g. 'wrist_l'); default is the motion's bounding box. */
+  focus?: string;
 };
 
-function Scene({ clipId, orbit, speed, paused, phase, onPhase }: SceneProps) {
+function Scene({ clipId, orbit, speed, paused, phase, onPhase, zoom = 1, focus }: SceneProps) {
   const clip = clips[clipId];
   const figure = useMemo(() => new Figure(), []);
   const bounds = useMemo(() => clipBounds(clip), [clip]);
@@ -43,16 +47,20 @@ function Scene({ clipId, orbit, speed, paused, phase, onPhase }: SceneProps) {
       onPhase((((time.current / clip.duration) % 1) + 1) % 1);
     }
     const { azimuth, elevation } = orbit.current;
+    const pose = samplePose(clip, time.current);
     // Aim slightly low so the figure sits above the playback controls.
-    const target = new THREE.Vector3(...bounds.center).add(new THREE.Vector3(0, -bounds.size * 0.07, 0));
-    const distance = (bounds.size / 2 / Math.tan(THREE.MathUtils.degToRad(FOV / 2))) * 1.3;
+    const target =
+      focus && pose.joints[focus]
+        ? new THREE.Vector3(...pose.joints[focus])
+        : new THREE.Vector3(...bounds.center).add(new THREE.Vector3(0, -bounds.size * 0.07, 0));
+    const distance = (bounds.size / 2 / Math.tan(THREE.MathUtils.degToRad(FOV / 2))) * 1.3 * zoom;
     camera.position.set(
       target.x + distance * Math.sin(azimuth) * Math.cos(elevation),
       target.y + distance * Math.sin(elevation),
       target.z + distance * Math.cos(azimuth) * Math.cos(elevation),
     );
     camera.lookAt(target);
-    figure.update(samplePose(clip, time.current), camera.position);
+    figure.update(pose, camera.position);
   });
 
   return (
@@ -61,6 +69,8 @@ function Scene({ clipId, orbit, speed, paused, phase, onPhase }: SceneProps) {
       <ambientLight intensity={1.7} />
       <directionalLight position={[2, 4, 3]} intensity={1.6} />
       <directionalLight position={[-3, 2, -2]} intensity={0.5} />
+      {/* Rim light from behind, so the dark iron bell keeps an edge on the black stage. */}
+      <directionalLight position={[0, 3, -4]} intensity={1.4} />
       <primitive object={figure.group} />
     </>
   );
@@ -79,6 +89,8 @@ export function FigureViewer({
   speed: speedProp,
   paused: pausedProp,
   onPhase,
+  zoom,
+  focus,
 }: {
   clipId: string;
   style?: ViewStyle;
@@ -89,6 +101,8 @@ export function FigureViewer({
   speed?: number;
   paused?: boolean;
   onPhase?: (phase: number) => void;
+  zoom?: number;
+  focus?: string;
 }) {
   const clip = clips[clipId];
   // Start from the watch camera, so the side it draws near (and single-arm work) faces you.
@@ -133,7 +147,7 @@ export function FigureViewer({
         onResponderGrant={onGrant}
         onResponderMove={onMove}>
         <Canvas camera={{ fov: FOV, near: 0.05, far: 20 }} style={{ flex: 1 }}>
-          <Scene clipId={clipId} orbit={orbit} speed={speed} paused={paused} phase={phase} onPhase={onPhase} />
+          <Scene clipId={clipId} orbit={orbit} speed={speed} paused={paused} phase={phase} onPhase={onPhase} zoom={zoom} focus={focus} />
         </Canvas>
       </View>
       {controls && (

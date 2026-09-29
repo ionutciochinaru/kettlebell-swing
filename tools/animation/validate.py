@@ -10,15 +10,17 @@ import json
 from pathlib import Path
 from math import sqrt
 try:
-    from .motions import IDS, pose_for
+    from .motions import IDS, pose_for, DURATIONS, ALLOWED_CONTACT
+    from .v2 import body as v2body, collide as v2collide
     from .rig import SEGMENTS, norm, sub, SIDES, HIP_HALF, SHOULDER_HALF, ANKLE_HEIGHT
 except ImportError:
-    from motions import IDS, pose_for
+    from motions import IDS, pose_for, DURATIONS, ALLOWED_CONTACT
+    from v2 import body as v2body, collide as v2collide
     from rig import SEGMENTS, norm, sub, SIDES, HIP_HALF, SHOULDER_HALF, ANKLE_HEIGHT
 
 ROOT=Path(__file__).resolve().parents[2]
 BILATERAL={'march','standing-knee','reverse-lunge','bird-dog','seated-knee',
-           'kb-reverse-lunge','kb-side-lunge','kb-side-bend','kb-curl','kb-halo'}
+           'kb-reverse-lunge','kb-side-lunge','kb-halo'}
 EXPECTED_BONES=dict(SEGMENTS)
 for s in SIDES:
     for name,a,b,d in [('hip','pelvis','hip_'+s,HIP_HALF),
@@ -39,6 +41,25 @@ def segment_distance(point,a,b):
     direction=sub(b,a);denominator=sum(v*v for v in direction)
     t=max(0.,min(1.,sum(x*y for x,y in zip(sub(point,a),direction))/denominator)) if denominator else 0.
     return norm(sub(point,tuple(x+t*y for x,y in zip(a,direction))))
+
+PROFILES=json.loads((Path(__file__).parent/'profiles.json').read_text())
+PENETRATION_TOLERANCE=.005
+
+
+def check_v2(name,samples=240):
+    """Validator v2: whole-body collisions (drawn radii) and dynamic balance (ZMP)."""
+    poses=[pose_for(name,i/samples) for i in range(samples)]
+    duration=DURATIONS[name]() if name in DURATIONS else PROFILES[name]['frames']/PROFILES[name]['fps']
+    worst=v2collide.worst(poses,ALLOWED_CONTACT.get(name))
+    pair,(clearance,phase,raw)=min(worst.items(),key=lambda kv:kv[1][0])
+    balance=v2body.balance_report(poses,duration)
+    zmp=min(r['zmp_margin'] for r in balance);com=min(r['com_margin'] for r in balance)
+    failures=[]
+    if clearance < -PENETRATION_TOLERANCE:failures.append(f'interpenetration {pair} {raw:.3f} m at {phase:.3f}')
+    if zmp < 0:failures.append(f'dynamic balance: ZMP {-zmp:.3f} m outside support')
+    return {'worst_clearance_pair':pair,'worst_clearance_m':raw,'worst_clearance_phase':phase,
+            'min_com_margin_m':com,'min_zmp_margin_m':zmp},failures
+
 
 def validate(samples=360):
     report={'schema':1,'reviewer':'anatomy-and-motion implementation agent',
@@ -77,7 +98,8 @@ def validate(samples=360):
             for k,v in p['contacts'].items():
                 if k in j:max_support_joint_error=max(max_support_joint_error,norm(sub(v,j[k])))
             prev=poses[(i-1)%samples]
-            for k in p['contacts'].keys() & prev['contacts'].keys():
+            # Rolling contacts (roll_*) move along the floor by design; pinned ones may not.
+            for k in {c for c in p['contacts'].keys() & prev['contacts'].keys() if not c.startswith('roll_')}:
                 max_support_drift=max(max_support_drift,norm(sub(p['contacts'][k],prev['contacts'][k])))
             for prop in p['props']:
                 if prop['type']=='kettlebell':
@@ -89,7 +111,8 @@ def validate(samples=360):
                         segments=prop.get('horns',[prop['handle']])
                         max_grip=max(max_grip,norm(sub(grip,j[joint])),
                                      min(segment_distance(grip,*segment) for segment in segments))
-                    min_prop_z=min(min_prop_z,prop['center'][2]-prop['radius'])
+                    # Cast-iron bells stand on a flat base at 0.8 radius below the centre.
+                    min_prop_z=min(min_prop_z,prop['center'][2]-.8*prop['radius'])
                 elif prop['type']=='dumbbell':
                     midpoint=[(a+b)/2 for a,b in zip(*prop['handle'])]
                     max_grip=max(max_grip,min(norm(sub(midpoint,j['wrist_'+s])) for s in SIDES))
@@ -142,6 +165,8 @@ def validate(samples=360):
         if min_halo_head_gap < 0:failures.append('halo arm intersects head envelope')
         if min(min_halo_hand_gap,min_halo_bell_gap,min_halo_handle_gap)<0:failures.append('halo hand or equipment intersects head envelope')
         if max_wrist_bend>1e-6 or max_hand_error>1e-6:failures.append('halo wrist bends or hand changes length')
+        v2row,v2failures=check_v2(name)
+        row.update(v2row);failures+=v2failures
         row['failures']=failures;report['exercises'].append(row)
     report['passed']=all(not r['failures'] for r in report['exercises'])
     return report

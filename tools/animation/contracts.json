@@ -202,19 +202,19 @@
   ]
  },
  "kb-side-bend": {
-  "variant": "Alternating single-kettlebell standing side bend",
-  "counting": "Each bend and return is one repetition; transfers do not count",
-  "phases": "Hold bell at side; small lateral bend; return tall; shared grip transfer; switch",
-  "contacts": "Feet planted; no torso twist; one hand grips bell except during handoff",
+  "variant": "Standing kettlebell side bend, bell in the left hand, right hand on the hip",
+  "counting": "One bend and return, per side",
+  "phases": "Tall; bend toward the bell as it slides down the outer thigh; return to tall",
+  "contacts": "Both feet planted; loaded arm hangs straight; bell rests against the outer thigh",
   "sources": [
    "K6"
   ]
  },
  "kb-curl": {
-  "variant": "Alternating single-kettlebell curl with handoff",
-  "counting": "Each curl and lower is one repetition; transfers do not count",
-  "phases": "Curl with upper arm quiet; lower; shared grip transfer in front; switch",
-  "contacts": "Feet planted; one hand grips handle except during handoff",
+  "variant": "Single-arm kettlebell curl, left arm, elbow pinned at the side",
+  "counting": "One curl and lower, per side",
+  "phases": "Arm long; curl to full flexion; lower slowly",
+  "contacts": "Both feet planted; upper arm still beside the ribs",
   "sources": [
    "K7"
   ]
@@ -689,10 +689,10 @@
   ]
  },
  "kb-getup": {
-  "variant": "Turkish get-up with a high bridge and leg sweep, bell in the left hand",
+  "variant": "Turkish get-up with a high bridge, bell in the left hand; the knee sweeps straight into a half-kneel and the top is a tall split stance",
   "counting": "One full get-up to standing and back down",
-  "phases": "Lie with the bell pressed; roll to the elbow; post on the hand; high bridge; sweep the leg to a kneel; windshield-wiper the back shin; stand; reverse every step",
-  "contacts": "Bell-side foot planted until standing; support hand, straight-leg heel and support knee pinned to the floor in their phases; bell arm vertical throughout",
+  "phases": "Lie with the bell pressed; roll onto the planted right elbow; post on the hand; high bridge; sweep the straight leg under the hips so the knee lands with the shin pointing back; push off the hand to an upright half-kneel; stand tall into a split stance; reverse every step",
+  "contacts": "Bell-side foot planted throughout; elbow, hand, heel, knee and back toes pinned in their stages; back and forearm roll on the floor during the roll; bell arm vertical throughout",
   "sources": [
    "production choice"
   ]

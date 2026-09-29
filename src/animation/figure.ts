@@ -8,6 +8,9 @@
 import * as THREE from 'three';
 import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry.js';
 
+import { HandModel, type Grip } from './hand-model';
+import { KettlebellModel } from './kettlebell-model';
+import { Chain, lambert, outlineMaterial, Solid } from './parts';
 import type { Pose, Vec3 } from './types';
 
 export const FIGURE_COLORS = {
@@ -24,95 +27,11 @@ export const FIGURE_COLORS = {
   outline: '#000000',
 };
 
-const OUTLINE = 0.006;
-const UP = new THREE.Vector3(0, 1, 0);
 const SIDES = ['l', 'r'] as const;
 type Side = (typeof SIDES)[number];
 
 const v = (p: Vec3) => new THREE.Vector3(p[0], p[1], p[2]);
 const mix = (a: THREE.Vector3, b: THREE.Vector3, t: number) => a.clone().lerp(b, t);
-
-const outlineMaterial = new THREE.MeshBasicMaterial({ color: FIGURE_COLORS.outline, side: THREE.BackSide });
-const lambert = (color: string) => new THREE.MeshLambertMaterial({ color });
-
-/** A tapered tube through points: open cylinders with ball joints, plus an inverted-hull outline. */
-class Chain {
-  private segments: { mesh: THREE.Mesh; outline?: THREE.Mesh }[] = [];
-  private balls: { mesh: THREE.Mesh; outline?: THREE.Mesh }[] = [];
-
-  constructor(parent: THREE.Object3D, widths: number[], material: THREE.Material, outline = true) {
-    const radii = widths.map((w) => w / 2);
-    for (let i = 0; i < radii.length - 1; i++) {
-      const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radii[i + 1], radii[i], 1, 18, 1, true), material);
-      const shell = outline
-        ? new THREE.Mesh(new THREE.CylinderGeometry(radii[i + 1] + OUTLINE, radii[i] + OUTLINE, 1, 18, 1, true), outlineMaterial)
-        : undefined;
-      this.segments.push({ mesh, outline: shell });
-      parent.add(mesh);
-      if (shell) parent.add(shell);
-    }
-    for (const r of radii) {
-      const mesh = new THREE.Mesh(new THREE.SphereGeometry(r, 18, 12), material);
-      const shell = outline ? new THREE.Mesh(new THREE.SphereGeometry(r + OUTLINE, 18, 12), outlineMaterial) : undefined;
-      this.balls.push({ mesh, outline: shell });
-      parent.add(mesh);
-      if (shell) parent.add(shell);
-    }
-  }
-
-  update(points: THREE.Vector3[]) {
-    const direction = new THREE.Vector3();
-    this.segments.forEach(({ mesh, outline }, i) => {
-      const a = points[i];
-      const b = points[i + 1];
-      direction.subVectors(b, a);
-      const length = Math.max(direction.length(), 1e-6);
-      for (const m of outline ? [mesh, outline] : [mesh]) {
-        m.position.copy(a).add(b).multiplyScalar(0.5);
-        m.quaternion.setFromUnitVectors(UP, direction.clone().divideScalar(length));
-        m.scale.set(1, length, 1);
-      }
-    });
-    this.balls.forEach(({ mesh, outline }, i) => {
-      mesh.position.copy(points[i]);
-      outline?.position.copy(points[i]);
-    });
-  }
-
-  set visible(value: boolean) {
-    for (const part of [...this.segments, ...this.balls]) {
-      part.mesh.visible = value;
-      if (part.outline) part.outline.visible = value;
-    }
-  }
-}
-
-/** Rigid mesh placed each frame by an orthonormal basis; outline is a scaled back-face shell. */
-class Solid {
-  readonly mesh: THREE.Mesh;
-  readonly outline: THREE.Mesh;
-
-  constructor(parent: THREE.Object3D, geometry: THREE.BufferGeometry, material: THREE.Material, outlineScale: Vec3) {
-    this.mesh = new THREE.Mesh(geometry, material);
-    this.outline = new THREE.Mesh(geometry, outlineMaterial);
-    this.outline.userData.outlineScale = outlineScale;
-    this.mesh.matrixAutoUpdate = false;
-    this.outline.matrixAutoUpdate = false;
-    parent.add(this.mesh, this.outline);
-  }
-
-  place(origin: THREE.Vector3, x: THREE.Vector3, y: THREE.Vector3, z: THREE.Vector3, scale: Vec3 = [1, 1, 1]) {
-    const basis = new THREE.Matrix4().makeBasis(x, y, z).setPosition(origin);
-    this.mesh.matrix.copy(basis).multiply(new THREE.Matrix4().makeScale(...scale));
-    const [ox, oy, oz] = this.outline.userData.outlineScale as Vec3;
-    this.outline.matrix.copy(basis).multiply(new THREE.Matrix4().makeScale(scale[0] * ox, scale[1] * oy, scale[2] * oz));
-  }
-
-  set visible(value: boolean) {
-    this.mesh.visible = value;
-    this.outline.visible = value;
-  }
-}
 
 /** Shoe profile from render.py, in a heel-origin frame: X across, Y up from sole, Z toward the toe. */
 function shoeGeometry(length: number): THREE.BufferGeometry {
@@ -131,24 +50,15 @@ function shoeGeometry(length: number): THREE.BufferGeometry {
   return new ConvexGeometry(points);
 }
 
-/** Sloped bell body from render.py, radius 1, axis +Y toward the handle. */
-function bellGeometry(): THREE.BufferGeometry {
-  const profile: [number, number][] = [
-    [0, -0.99], [0.14, -0.99], [0.43, -0.9], [0.86, -0.5], [0.98, 0], [0.86, 0.4], [0.5, 0.64], [0, 0.7],
-  ];
-  return new THREE.LatheGeometry(profile.map(([x, y]) => new THREE.Vector2(x, y)), 28);
-}
-
 type SideParts = {
   leg: Chain;
   cuff: Chain;
   arm: Chain;
-  hand: Chain;
+  hand: HandModel;
   shoe: Solid;
   materials: { limb: THREE.MeshLambertMaterial; pants: THREE.MeshLambertMaterial; cuff: THREE.MeshLambertMaterial };
 };
 
-type BellParts = { body: Solid; handle: Chain; horns: Chain };
 
 export class Figure {
   readonly group = new THREE.Group();
@@ -158,7 +68,7 @@ export class Figure {
   private head: Solid;
   private shirt: THREE.Mesh;
   private shirtOutline: THREE.Mesh;
-  private bells: BellParts[] = [];
+  private bells: KettlebellModel[] = [];
   private colors = {
     ink: new THREE.Color(FIGURE_COLORS.ink),
     far: new THREE.Color(FIGURE_COLORS.far),
@@ -184,7 +94,7 @@ export class Figure {
         cuff: new Chain(this.group, [0.088, 0.079], materials.cuff, false),
         // Strong upper arms taper through the elbow into slender forearms.
         arm: new Chain(this.group, [0.098, 0.12, 0.068, 0.038], materials.limb),
-        hand: new Chain(this.group, [0.038, 0.046], materials.limb),
+        hand: new HandModel(this.group, materials.limb),
         shoe: new Solid(this.group, shoeGeometry(0.235), materials.limb, [1.18, 1.25, 1.06]),
       };
     }
@@ -197,13 +107,7 @@ export class Figure {
     this.shirtOutline = new THREE.Mesh(this.shirt.geometry, outlineMaterial);
     this.group.add(this.shirt, this.shirtOutline);
 
-    for (let i = 0; i < 2; i++) {
-      this.bells.push({
-        body: new Solid(this.group, bellGeometry(), lambert(FIGURE_COLORS.bell), [1.07, 1.06, 1.07]),
-        handle: new Chain(this.group, [0.024, 0.024, 0.024, 0.024], ink),
-        horns: new Chain(this.group, [0.024, 0.024, 0.024, 0.024], lambert(FIGURE_COLORS.prop)),
-      });
-    }
+    for (let i = 0; i < 2; i++) this.bells.push(new KettlebellModel(this.group));
   }
 
   /** Pose the figure. `camera` is the eye position, for near/far side shading. */
@@ -235,7 +139,7 @@ export class Figure {
 
       const [shoulder, elbow, wrist, palm] = [j[`shoulder_${side}`], j[`elbow_${side}`], j[`wrist_${side}`], j[`palm_${side}`]];
       parts.arm.update([shoulder, mix(shoulder, elbow, 0.43), elbow, wrist]);
-      parts.hand.update([wrist, palm]);
+      parts.hand.update(wrist, palm, this.gripFor(wrist, palm, pose));
 
       const heel = j[`heel_${side}`];
       const along = j[`toe_${side}`].clone().sub(heel).normalize();
@@ -254,28 +158,40 @@ export class Figure {
     const headSide = new THREE.Vector3().crossVectors(headUp, headFront);
     this.head.place(j.head.clone().addScaledVector(headFront, 0.004), headSide, headUp, headFront, [0.08, 0.108, 0.091]);
 
-    this.bells.forEach((parts, i) => {
+    this.bells.forEach((model, i) => {
       const bell = pose.bells[i];
-      parts.body.visible = !!bell;
-      parts.handle.visible = !!bell && !bell.horns;
-      parts.horns.visible = !!bell?.horns;
+      model.visible = !!bell;
       if (!bell) return;
-      const center = v(bell.center);
-      const [h0, h1] = bell.handle.map(v);
-      const axis = mix(h0, h1, 0.5).sub(center).normalize();
-      const acrossRaw = h0.clone().sub(h1);
-      const across = acrossRaw.addScaledVector(axis, -acrossRaw.dot(axis)).normalize();
-      const depthAxis = new THREE.Vector3().crossVectors(across, axis);
-      parts.body.place(center, across, axis, depthAxis, [bell.radius, bell.radius, bell.radius]);
-      if (bell.horns) {
-        const [a0, a1] = bell.horns.map(v);
-        parts.horns.update([a0, h0, h1, a1]);
-      } else {
-        const attach = (sign: number) =>
-          center.clone().addScaledVector(axis, 0.4 * bell.radius).addScaledVector(across, sign * 0.64 * bell.radius);
-        parts.handle.update([attach(1), h0, h1, attach(-1)]);
-      }
+      model.place({
+        center: v(bell.center),
+        handle: [v(bell.handle[0]), v(bell.handle[1])],
+        radius: bell.radius,
+        horns: bell.horns ? [v(bell.horns[0]), v(bell.horns[1])] : undefined,
+      });
     });
+  }
+
+  /** A hand grips when its wrist or palm sits on a handle or horn segment. */
+  private gripFor(wrist: THREE.Vector3, palm: THREE.Vector3, pose: Pose): Grip | undefined {
+    let best: Grip | undefined;
+    let bestDistance = 0.035;
+    for (const bell of pose.bells) {
+      const [h0, h1] = bell.handle.map(v);
+      const segments: [THREE.Vector3, THREE.Vector3][] = [[h0, h1]];
+      if (bell.horns) segments.push([v(bell.horns[0]), h0], [v(bell.horns[1]), h1]);
+      for (const [a, b] of segments) {
+        const line = new THREE.Line3(a, b);
+        for (const joint of [wrist, palm]) {
+          const point = line.closestPointToPoint(joint, true, new THREE.Vector3());
+          const distance = point.distanceTo(joint);
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            best = { point, axis: b.clone().sub(a).normalize() };
+          }
+        }
+      }
+    }
+    return best;
   }
 
   private updateShirt(j: Record<string, THREE.Vector3>, offset: (p: THREE.Vector3, side?: number, along?: number, front?: number) => THREE.Vector3) {

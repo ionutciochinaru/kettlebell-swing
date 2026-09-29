@@ -136,9 +136,9 @@ export const EXERCISES: Exercise[] = [
     primary: ['Obliques'],
     support: ['Grip'],
     cues: [
-      'Bell in one hand at the side, feet under the hips.',
-      'Bend sideways only; no twisting or leaning forward.',
-      'Return to tall using the opposite side of the waist.',
+      'Bell in one hand, arm long; other hand on the hip.',
+      'Bend sideways only, letting the bell slide down the outer thigh.',
+      'Return to tall using the opposite side of the waist. Switch hands for the other side.',
     ],
   },
   {
@@ -233,8 +233,8 @@ export const EXERCISES: Exercise[] = [
     cues: [
       'Eyes on the bell; the bell arm stays vertical the whole time.',
       'Roll to the elbow, then post on the hand.',
-      'Bridge the hips high, sweep the straight leg under to a kneel.',
-      'Straighten the torso, windshield-wiper the back shin, then stand.',
+      'Bridge the hips high, then sweep the straight leg under your hips so the knee lands behind you.',
+      'Push off the hand to an upright half-kneel, then stand tall in a split stance.',
       'Reverse every step slowly to lie back down.',
     ],
   },
