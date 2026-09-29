@@ -1,0 +1,1037 @@
+{
+ "revision": "54e441838d09",
+ "reviewers": [
+  {
+   "role": "form",
+   "revision": "54e441838d09",
+   "reviewedAt": "2026-09-29T12:00:00Z",
+   "method": "Read review-rubric.md, form-contracts.md, tools/animation/contracts.json and src/core/exercises.ts cues. Inspected all 14 contact sheets (4 views x 8 phases; kb-getup 16 phases) and opened individual 480px frames at key phases (backswing/top, bottom/depth, rack/lockout, transfers, get-up stages) plus geometry.json clearances. Not observed: real-time playback, easing, timing, loop smoothness and native in-app display size. Timing/loop review is therefore unrun; judgments are from stills only. Primary source pages were not re-fetched; technique judged against the repo's contracts and cues.",
+   "exercises": {
+    "kb-swing": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "Swing identity is clear: hinge to backswing, standing hip-extended top with long arms, bell to about shoulder height, fall back into the hinge. But the backswing is knee-dominant and low, which contradicts the cue 'hike the bell back high between the thighs'. The load looks light at the top and buried in the legs at the bottom.",
+     "defects": [
+      {
+       "phase": "0.0",
+       "view": "right",
+       "issue": "At the bottom the bell sits at mid-shin/knee height behind the heels, with large forward knee travel (shins angled well forward). It reads as a squat swing, not a hinge-dominant hike with the bell high between the thighs.",
+       "fix": "Keep shins near vertical with soft knees, push the hips further back, and keep the bell above knee level behind the crotch, with forearms against the inner thighs."
+      },
+      {
+       "phase": "0.0",
+       "view": "threequarter",
+       "issue": "The forearms and upper arms pass through the thighs (geometry forearm-thigh -8.8 cm, upper-arm-thigh -2.1 cm). The arms-between-thighs path the cue teaches can't be read.",
+       "fix": "Route the arms between the thighs, touching the inner thigh without penetrating it; widen the stance slightly if needed."
+      },
+      {
+       "phase": "0.5",
+       "view": "left",
+       "issue": "The float reaches roughly shoulder height with arms horizontal. That's acceptable but at the upper limit of the stated chest-height variant, and there's no visible ribs-down/glute lockout cue in the torso.",
+       "fix": "Peak the bell at chest to sternum height, with the arms slightly below horizontal."
+      }
+     ]
+    },
+    "kb-deadlift": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "Floor start, two-hand grip, standing lockout and hinge return are all present and read as a deadlift rather than a squat or swing. The setup is knee-heavy, and the arms pass through the legs.",
+     "defects": [
+      {
+       "phase": "0.0",
+       "view": "right",
+       "issue": "The bell sits at or in front of the toes rather than under the hips/mid-foot. Thighs are nearly horizontal with knees well forward, which weakens the 'push the hips back' hinge cue.",
+       "fix": "Place the bell between the feet at mid-foot, under the hips. Raise the hips a little and bring the shins closer to vertical."
+      },
+      {
+       "phase": "0.083-0.133",
+       "view": "threequarter",
+       "issue": "The upper arms and forearms pass through the thighs (up to -11 cm; upper arm vs shin -7.4 cm at 0.0). A viewer can't tell whether the arms are inside or outside the knees.",
+       "fix": "Keep the arms clearly inside the knees (stance wide enough) or clearly outside, with no penetration."
+      }
+     ]
+    },
+    "goblet-squat": {
+     "score": 8,
+     "confidence": "medium",
+     "summary": "Clear goblet squat: bell held by the horns near the chest, knees track over the feet, near-parallel depth with a fairly tall chest, soles planted, and a full stand. It's distinct from the swing and deadlift.",
+     "defects": [
+      {
+       "phase": "0.5",
+       "view": "left",
+       "issue": "At the bottom the bell drifts down to belly/upper-thigh level and the torso leans about 35 degrees, slightly weakening 'close to the chest' and 'tall chest'. Minor.",
+       "fix": "Keep the bell at sternum height through the descent and reduce the forward lean slightly."
+      },
+      {
+       "phase": "0.5",
+       "view": "front",
+       "issue": "Stance is about hip width. 'Sit between the heels' reads better with a slightly wider stance and elbows between the knees. Minor.",
+       "fix": "Widen the stance to about shoulder width with toes slightly out."
+      }
+     ]
+    },
+    "kb-reverse-lunge": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "Alternation is correct: the left leg steps back in the first half, the right in the second. The goblet hold, planted front foot, upright torso and return to standing are shown. The two sides are depicted inconsistently at the bottom.",
+     "defects": [
+      {
+       "phase": "0.25",
+       "view": "left",
+       "issue": "On the left-leg rep the rear knee is on the floor with the shin lying flat, so it reads as a kneel rather than a controlled lunge. The 0.75 rep hovers the knee, so the two sides teach different depths.",
+       "fix": "Make both sides match, with the rear knee hovering just above the floor under the hip and the rear shin inclined on the forefoot."
+      },
+      {
+       "phase": "0.0",
+       "view": "front",
+       "issue": "The hands sit near the chin, so the bell reads high rather than at the chest. Minor.",
+       "fix": "Lower the hold slightly to sternum height."
+      }
+     ]
+    },
+    "kb-side-lunge": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "The wide stance, goblet hold, alternating lateral shift with a long non-working leg and return to centre are all present. But the lunge is shallow: from the front it reads more as a weight shift than 'sit the hips back and over one foot'.",
+     "defects": [
+      {
+       "phase": "0.25",
+       "view": "front",
+       "issue": "The working knee looks nearly straight from the front and the hips barely drop. The main teaching camera shows a lean rather than a lunge.",
+       "fix": "Increase working-knee flexion and hip drop (hips back and down over the working foot) so the bend reads from the front."
+      },
+      {
+       "phase": "0.75",
+       "view": "threequarter",
+       "issue": "Same shallow depth on the right side, with limited hip hinge.",
+       "fix": "Match the increased depth and add a slight forward torso hinge with hips behind the heel."
+      }
+     ]
+    },
+    "kb-upright-row": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "The two-hand lift from the thighs toward the chest and the controlled lower are visible. At the top, though, the elbows reach shoulder height and the bell is held well in front of the body, which contradicts 'keep the bell close' and the contract's elbows-below-shoulders.",
+     "defects": [
+      {
+       "phase": "0.5",
+       "view": "left",
+       "issue": "Upper arms are horizontal and point forward, with the bell hanging about 20 cm in front of the sternum. That reads partly as a front raise, not a close upright row.",
+       "fix": "Lead with the elbows out to the sides, keep the bell brushing up the torso, and stop with the elbows just below shoulder height and the bell at the lower chest."
+      },
+      {
+       "phase": "0.5",
+       "view": "front",
+       "issue": "The elbows flare to full shoulder height, exceeding the stated 'usually below the shoulders' limit.",
+       "fix": "Cap elbow height below the shoulders."
+      }
+     ]
+    },
+    "kb-bent-row": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "The row is recognizable: a stable hinged torso about 35 degrees above horizontal, elbows driving back, and the bell drawn toward the torso and lowered. The knees are bent far more than 'soft', and the bell grazes the thighs.",
+     "defects": [
+      {
+       "phase": "0.0-0.5",
+       "view": "right",
+       "issue": "The knees are deeply flexed and forward of the toes, so the pose looks like a quarter squat rather than a hinge with soft knees.",
+       "fix": "Straighten the knees to a soft bend and move the hips further back, keeping the torso angle."
+      },
+      {
+       "phase": "0.2-0.5",
+       "view": "right",
+       "issue": "The bell travels against or through the thighs (-0.7 cm at 0.2) and finishes near the belly/knee line rather than the lower ribs.",
+       "fix": "Keep the bell path in front of the shins and pull it to lower-rib height."
+      }
+     ]
+    },
+    "kb-side-bend": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "Alternation, the in-front handoffs and the direction of the lateral bend toward the bell are correct, with no twist. But the loaded arm is held out from the thigh instead of hanging, and the bend is small, so the load doesn't look like it pulls the body sideways.",
+     "defects": [
+      {
+       "phase": "0.25",
+       "view": "front",
+       "issue": "The bell arm is abducted about 15 degrees away from the leg, with the bell floating out beside the thigh. A hanging load would stay close to the leg, so the weight doesn't read.",
+       "fix": "Let the bell arm hang vertically so the bell slides down the outside of the thigh as the torso bends."
+      },
+      {
+       "phase": "0.75",
+       "view": "front",
+       "issue": "The same abducted arm on the right side, and the bend is only about 10-12 degrees, so the bell barely descends.",
+       "fix": "Increase the bend modestly so the bell visibly travels toward the knee, then return tall."
+      }
+     ]
+    },
+    "kb-curl": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "Alternating curls with the upper arm quiet, feet planted and in-front handoffs read correctly. The curl stops at about forearm-horizontal, and the lowered bell sits away from the thigh.",
+     "defects": [
+      {
+       "phase": "0.25",
+       "view": "left",
+       "issue": "Peak elbow flexion is only about 100-110 degrees (forearm slightly above horizontal), a partial range for a curl.",
+       "fix": "Curl until the forearm is near vertical, with the bell at shoulder/upper-chest height."
+      },
+      {
+       "phase": "0.125",
+       "view": "front",
+       "issue": "The working arm hangs abducted, so the bell is held out beside the thigh rather than hanging at the side, reducing the sense of load.",
+       "fix": "Keep the elbow at the side and let the bell hang close to the thigh at the bottom."
+      }
+     ]
+    },
+    "kb-halo": {
+     "score": 8,
+     "confidence": "medium",
+     "summary": "A credible halo: the horns are held with the base up at the front, the bell circles close around the head, base down behind the head with the elbows raised, the torso and feet stay still, and the second circle reverses direction.",
+     "defects": [
+      {
+       "phase": "0.125",
+       "view": "threequarter",
+       "issue": "The near forearm crosses directly in front of the face, which briefly hides the head-bell relationship. Minor.",
+       "fix": "Keep the bell slightly higher/further round the side so the face stays visible."
+      }
+     ]
+    },
+    "kb-clean": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "The full clean sequence reads: rack, drop to hinge, backswing, hip drive, elbow back and in with the bell close, soft rack with the bell on the outside of the forearm. The backswing has the same low, knee-heavy problem as the swing, and the bell passes through the thigh.",
+     "defects": [
+      {
+       "phase": "0.375-0.5",
+       "view": "right",
+       "issue": "The backswing bell sits at knee height behind the legs with a deep knee bend, not 'hike the bell back high'.",
+       "fix": "Hinge more and flex the knees less, and keep the bell high between the thighs."
+      },
+      {
+       "phase": "0.542",
+       "view": "front",
+       "issue": "The bell and forearm penetrate the left thigh (bell -12.8 cm, forearm -9.9 cm), which obscures the between-the-legs path of a one-arm swing.",
+       "fix": "Route the bell between the thighs with clearance."
+      },
+      {
+       "phase": "0.625",
+       "view": "left",
+       "issue": "At full hip extension the bell is still at hip height in front of the thigh. That's acceptable, but the float/pull moment is brief in stills. Timing unobserved.",
+       "fix": "Confirm in playback that the hip snap visibly precedes the elbow pull."
+      }
+     ]
+    },
+    "kb-press": {
+     "score": 8,
+     "confidence": "medium",
+     "summary": "A clear strict press: solid rack with the bell on the forearm, a vertical forearm as the bell passes the face, lockout with the biceps by the ear and the bell on the back of the forearm, and a controlled return with no leg drive.",
+     "defects": [
+      {
+       "phase": "0.25",
+       "view": "front",
+       "issue": "The elbow comes forward to shoulder height, and from the front the forearm looks foreshortened and almost horizontal, so the vertical-forearm cue is only readable from the side views. Minor.",
+       "fix": "Keep the elbow slightly more out to the side and below the bell so the vertical forearm reads from the front."
+      }
+     ]
+    },
+    "kb-snatch": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "The snatch is identifiable and distinct from the clean: lockout, drop into backswing, hip drive, high pull with the elbow high, punch-through, and back to lockout. The backswing repeats the low, knee-heavy pattern and the bell penetrates the thigh.",
+     "defects": [
+      {
+       "phase": "0.375",
+       "view": "right",
+       "issue": "The backswing is knee-dominant with the bell at knee height (bell vs thigh -13.2 cm), so it doesn't teach a hard hinge-driven hike.",
+       "fix": "Use a higher backswing with more hip hinge and less knee bend, with the bell passing cleanly between the thighs."
+      },
+      {
+       "phase": "0.25",
+       "view": "left",
+       "issue": "On the drop, the arm is straight out horizontally with the bell hanging below the hand, like a swing float, rather than the bell turning over close to the body.",
+       "fix": "Show the bell rolling over the hand and falling close to the body into the backswing."
+      }
+     ]
+    },
+    "kb-getup": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "All the named stages appear in order with the bell arm vertical: supine press, elbow, hand post, high bridge, leg sweep to kneel, windshield wiper, half-kneel, stand, and reverse. The descent is noticeably compressed, and the support arm passes through the swept shin.",
+     "defects": [
+      {
+       "phase": "0.375",
+       "view": "right",
+       "issue": "During the sweep to the kneel the support arm passes through the right shin and thigh (-8.3 cm / -7.7 cm), so the hand/knee placement can't be read.",
+       "fix": "Plant the support hand clearly behind or beside the swept knee with visible clearance."
+      },
+      {
+       "phase": "0.6875-0.9375",
+       "view": "right",
+       "issue": "The descent takes about 6 samples against about 10 for the ascent, and the kneel goes almost straight to bridge/hand post. That weakens 'reverse every step slowly' and hides the reverse windshield wiper. Timing unobserved.",
+       "fix": "Give the descent the same stage durations as the ascent, including the reverse windshield wiper and the hand placement before the hips lower."
+      },
+      {
+       "phase": "0.625",
+       "view": "front",
+       "issue": "The standing top appears in only one sample, so a viewer may miss the full stand. Timing unobserved.",
+       "fix": "Hold the standing lockout briefly."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "role": "visuals",
+   "revision": "54e441838d09",
+   "reviewedAt": "2026-09-29T13:38:03+00:00",
+   "method": "Inspected all 14 contact sheets (front/threequarter/left/right x 8 phases; 16 for kb-getup) and zoomed native 480x480 frames for key phases of every exercise. Read geometry.json clearance data and figure.ts (hand, handle, bell, outline and near/far shading construction) and contracts.json. Not observed: playback, timing, pacing, easing, loop seam smoothness and in-between frames (stills only). Library-wide findings: near/far ivory/grey contrast works well; the 0.006 outline is barely visible at native size except on the shirt; hands are fingerless capsules; the handle is a square ivory bracket; the faceted pale bell reads medium-light rather than heavy.",
+   "exercises": {
+    "kb-swing": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "Hinge-to-float arc reads clearly in the side and three-quarter views, and the chest-height float is well framed. The backswing, though, buries the arms inside the thighs and hides the bell between the legs, so the key loading position is unclear.",
+     "defects": [
+      {
+       "phase": "0.000",
+       "view": "left",
+       "issue": "Forearms and upper arms pass through the thighs (geometry -0.088 m forearm/thigh, -0.021 m upper arm/thigh). The arm silhouette disappears into the leg, and the bell hangs under the knees rather than clearly behind them.",
+       "fix": "Route the arms so they visibly pass inside the thighs (between the legs) with positive clearance, and place the bell behind the heel line so the backswing reads."
+      },
+      {
+       "phase": "0.000",
+       "view": "threequarter",
+       "issue": "The bell is almost entirely hidden behind the near thigh, and the far arm merges with the near leg, so the hand/handle contact is not visible at the bottom of the swing.",
+       "fix": "Resolve the interpenetration above; also consider slightly wider knees so the bell is visible between the legs from this angle."
+      },
+      {
+       "phase": "0.133",
+       "view": "left",
+       "issue": "Hand passes into the thigh (-0.016 m) while the bell travels upward, a brief visible clip.",
+       "fix": "Keep the handle path clear of the thigh surface on the upswing."
+      },
+      {
+       "phase": "0.500",
+       "view": "front",
+       "issue": "At the float the bell covers the hands and lower chest, so from the front the grip is not visible. This is acceptable, but the pose reads as a flat disc on the shirt.",
+       "fix": "Minor: slight camera-independent offset or darker bell tone so the bell separates from the orange shirt."
+      },
+      {
+       "phase": "0.375",
+       "view": "threequarter",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.250",
+       "view": "front",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "kb-deadlift": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "Floor-to-stand-to-floor is clear and well differentiated from the swing (no float). Arms visibly sink into the thighs and shins throughout the low positions, the worst interpenetration in the library.",
+     "defects": [
+      {
+       "phase": "0.083",
+       "view": "left",
+       "issue": "Upper arms pass 0.11 m into the thighs, and forearms 0.094 m at 0.133. In the side views the arms vanish inside the legs, so the hands appear to grow out of the knees.",
+       "fix": "Place the hands inside the knees (narrow grip between wider knees), or widen the stance, so arms hang in the gap with positive clearance."
+      },
+      {
+       "phase": "0.000",
+       "view": "right",
+       "issue": "Upper arm vs shin -0.074 m: the arm cuts through the far shin at floor reset, and the bell looks glued to the shin.",
+       "fix": "Same fix: move the handle/arm line medial to the shins."
+      },
+      {
+       "phase": "0.000",
+       "view": "threequarter",
+       "issue": "Near thigh overlaps both arms and the handle, so the two-hand grip on the floor bell is hard to read from the default orbit.",
+       "fix": "Resolve the clearance above; ensure both hands and the handle are visible at the floor position."
+      },
+      {
+       "phase": "0.000",
+       "view": "front",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.000",
+       "view": "threequarter",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "goblet-squat": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "Clean, interpenetration-free squat with good depth and planted feet from every view. The horns-grip bell is small and partly occluded by the forearms in side views, where the hands read as upright 'praying' stumps.",
+     "defects": [
+      {
+       "phase": "0.500",
+       "view": "left",
+       "issue": "At the bottom the near forearm covers most of the bell, and the hands point straight up as thin sticks. The goblet hold reads as clasped hands rather than a held weight.",
+       "fix": "Show more bell below and in front of the hands (bell body against the sternum, hands cupping the horns), and give hands volume."
+      },
+      {
+       "phase": "0.500",
+       "view": "front",
+       "issue": "The bell at chest is roughly head-sized and pale against the orange shirt, so it reads light for a goblet load.",
+       "fix": "Darker, slightly larger bell with a visible base, so the load reads."
+      },
+      {
+       "phase": "0.000",
+       "view": "front",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      }
+     ]
+    },
+    "kb-reverse-lunge": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "Alternation and the step back read well in the side and three-quarter views, with good clearance and a consistent goblet hold. From the front, the rear leg is heavily foreshortened and the knee-down position is ambiguous.",
+     "defects": [
+      {
+       "phase": "0.250",
+       "view": "front",
+       "issue": "The rear leg foreshortens into a short stub, and the back foot is hidden behind the front shin. The lunge depth and the rear forefoot contact are not readable from this orbit.",
+       "fix": "Accept as orbit limitation, but ensure rear shoe and cuff stay visible (slight stance width) so the rear support contact reads."
+      },
+      {
+       "phase": "0.750",
+       "view": "left",
+       "issue": "The far-side (grey) working leg is the rear leg here. Near/far shading helps, but the rear knee and shin overlap the near shin at the bottom.",
+       "fix": "Minor: keep a small lateral stance width so legs don't overlap in the pure side view."
+      },
+      {
+       "phase": "0.250",
+       "view": "left",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      }
+     ]
+    },
+    "kb-side-lunge": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "The front and three-quarter views clearly show the wide stance and shift, with a steady goblet hold and no clipping. The working-knee bend is modest, and the side views, where legs superimpose, are nearly uninformative.",
+     "defects": [
+      {
+       "phase": "0.250",
+       "view": "front",
+       "issue": "The working knee bends only mildly relative to the long straight leg, so the 'sit back into one hip' cue is understated at native size.",
+       "fix": "Deepen the working-hip sit or push the hips back more, so the bent leg reads clearly against the straight leg."
+      },
+      {
+       "phase": "0.250",
+       "view": "left",
+       "issue": "Both legs superimpose, and the depth shift is invisible. It looks like a slight squat.",
+       "fix": "Orbit limitation; acceptable, but note the default view should stay frontal or three-quarter."
+      },
+      {
+       "phase": "0.000",
+       "view": "front",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      }
+     ]
+    },
+    "kb-upright-row": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "The front view reads as an upright row with elbows flaring high. In the side views the top position looks like a front raise, with the upper arm horizontal and forward and the bell hanging well ahead of the chest.",
+     "defects": [
+      {
+       "phase": "0.500",
+       "view": "left",
+       "issue": "The upper arm points forward horizontally, the forearm hides behind it, and the bell hangs roughly an arm's width in front of the sternum. It reads as a front raise, contradicting 'lift close to body'.",
+       "fix": "Keep the bell within a few cm of the torso, with elbows lifting out to the sides (not forward) so the side view shows a vertical forearm next to the chest."
+      },
+      {
+       "phase": "0.500",
+       "view": "right",
+       "issue": "Same far-side view: the bell floats in front of the chest, detached from the body line.",
+       "fix": "As above."
+      },
+      {
+       "phase": "0.375",
+       "view": "threequarter",
+       "issue": "The far arm is grey and horizontal behind the near arm, so the two arms merge into one bar.",
+       "fix": "Resolving elbow path to the sides will separate the arms."
+      },
+      {
+       "phase": "0.500",
+       "view": "front",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.000",
+       "view": "front",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "kb-bent-row": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "A stable hinge with a clear pull toward the torso in the side and three-quarter views. There is a minor bell/thigh contact, and from the front the hinged torso foreshortens into a hunched blob.",
+     "defects": [
+      {
+       "phase": "0.200",
+       "view": "threequarter",
+       "issue": "Bell touches or slightly enters the thigh (-0.007 m) on the way up, and the near forearm overlays the thigh at 0.033.",
+       "fix": "Move the bell path a few cm forward or medial so it clears the thighs."
+      },
+      {
+       "phase": "0.500",
+       "view": "front",
+       "issue": "The torso foreshortens, and the head sits atop the shirt. The pull height is hard to judge, since the bell hides against the pelvis.",
+       "fix": "Orbit limitation; acceptable if three-quarter is default."
+      },
+      {
+       "phase": "0.500",
+       "view": "left",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.500",
+       "view": "left",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "kb-side-bend": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "The alternation and handoff are readable from the front, but the lateral bend is small enough to read as standing with a bell. The side views show essentially no action.",
+     "defects": [
+      {
+       "phase": "0.250",
+       "view": "front",
+       "issue": "The trunk tilts only about 10 degrees. At native 480 px the bend is subtle, and the bell barely drops relative to the knee, so the instruction is weak.",
+       "fix": "Increase the visible lateral bend, or accent it with a clearer pelvis-still, ribcage-tilt shape, so the action reads at native size."
+      },
+      {
+       "phase": "0.250",
+       "view": "left",
+       "issue": "The action is lateral, so the side views show only the bell moving slightly. Nothing distinguishes this from a suitcase carry or standing hold.",
+       "fix": "Orbit limitation; keep front or three-quarter as the default camera."
+      },
+      {
+       "phase": "0.000",
+       "view": "front",
+       "issue": "At handoff the bell hangs centrally in front of the groin with both hands. From this view it is indistinguishable from the kb-curl handoff at 0.0.",
+       "fix": "Acceptable; differentiation comes from the bend phases, which need more amplitude."
+      },
+      {
+       "phase": "0.250",
+       "view": "front",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.250",
+       "view": "front",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "kb-curl": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "The curl and handoff alternation read well in the three-quarter view, with no clipping. The curl top foreshortens badly from front and side, and the hand at the top reads as a thin spike above the bell.",
+     "defects": [
+      {
+       "phase": "0.250",
+       "view": "front",
+       "issue": "The forearm points at the camera, so the bell floats beside the shoulder with no visible forearm or hand, and the curl reads as a hovering bell.",
+       "fix": "Orbit limitation mostly. A slight outward forearm angle, or a stronger hand form, would keep the grip visible."
+      },
+      {
+       "phase": "0.250",
+       "view": "left",
+       "issue": "The hand is drawn as a thin vertical stick poking up through the handle, like a spike, not a fist holding the handle.",
+       "fix": "Hand volume and orientation fix: a closed fist around the handle, with knuckles forward."
+      },
+      {
+       "phase": "0.750",
+       "view": "threequarter",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.250",
+       "view": "threequarter",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "kb-halo": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "The circle around the head is readable in the three-quarter and side views. From the front, the bell covers the face at the front reset and disappears entirely behind the head at the rear. The horns are drawn as an angular bar, and the elbows read awkwardly.",
+     "defects": [
+      {
+       "phase": "0.000",
+       "view": "front",
+       "issue": "Bottom-up bell sits directly in front of the face, occluding the head. The figure looks faceless with a ball for a head.",
+       "fix": "Hold the front reset lower (chin or sternum level), so the head stays visible."
+      },
+      {
+       "phase": "0.250",
+       "view": "front",
+       "issue": "The bell is fully hidden behind the head, leaving just two raised arms. The instruction is lost from the front.",
+       "fix": "Orbit limitation; acceptable if the default camera is three-quarter (the contract specifies a fixed three-quarter crop, which the app render does not use)."
+      },
+      {
+       "phase": "0.125",
+       "view": "threequarter",
+       "issue": "The horns are rendered as a 4-point angular chain in pale grey. The palms-on-horns grip reads as hands on a stick, and the near forearm crosses the face.",
+       "fix": "Render horns as a rounded continuous handle, and give the hands volume that wraps it."
+      },
+      {
+       "phase": "0.250",
+       "view": "left",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "kb-clean": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "The rack position and the hinge are both recognisable, but the backswing drives the arm and bell through the thigh. The swinging free arm is distracting, and the backswing frames are visually identical to the snatch.",
+     "defects": [
+      {
+       "phase": "0.542",
+       "view": "left",
+       "issue": "The bell passes 0.128 m into the thigh, and forearm/thigh is -0.099 at 0.508. The bell appears to emerge from inside the knee.",
+       "fix": "Carry the arm and bell inside the thighs, with a wider knee gap and positive clearance."
+      },
+      {
+       "phase": "0.333",
+       "view": "threequarter",
+       "issue": "Bell vs shin -0.089 m; the bell and hand are hidden behind the near thigh during the drop, so the grip is invisible.",
+       "fix": "Same routing fix."
+      },
+      {
+       "phase": "0.375",
+       "view": "threequarter",
+       "issue": "The free right arm hangs forward and diagonally to the floor, a long ivory line that dominates the silhouette and competes with the working arm.",
+       "fix": "Keep the free arm closer to the body or following the bell, so the working arm reads as the subject."
+      },
+      {
+       "phase": "0.000",
+       "view": "front",
+       "issue": "In the rack, the bell sits beside the hand against the chest, and it is not clear that it rests on the outside of the forearm.",
+       "fix": "Position the bell visibly on the outer forearm, with the wrist straight, and give the hand a fist form."
+      },
+      {
+       "phase": "0.000",
+       "view": "threequarter",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.750",
+       "view": "threequarter",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "kb-press": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "Clear rack-to-lockout press in the front and three-quarter views, well framed, with no clipping. From the right side, the working arm is completely hidden behind the head and the bell appears perched on the skull.",
+     "defects": [
+      {
+       "phase": "0.500",
+       "view": "right",
+       "issue": "The left working arm is fully occluded by the head and torso, so the bell looks like it balances on top of the head. The press is unreadable from this orbit.",
+       "fix": "Slight lateral lockout (arm just outside the head line), or near/far depth ordering, so the bell and forearm stay visible from the far side."
+      },
+      {
+       "phase": "0.500",
+       "view": "front",
+       "issue": "At lockout the handle bracket sits above the fist, and the bell hangs beside the wrist. The 'bell on back of forearm' contact reads as the bell dangling.",
+       "fix": "Rotate the bell so its body rests visibly on the back of the forearm, with the handle diagonal across the palm."
+      },
+      {
+       "phase": "0.250",
+       "view": "threequarter",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.500",
+       "view": "front",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "kb-snatch": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "The lockout and high pull read, but the backswing has the library's largest bell/thigh interpenetration. From the right, the lockout again shows the bell sitting on the head, and the low frames are indistinguishable from the clean.",
+     "defects": [
+      {
+       "phase": "0.375",
+       "view": "left",
+       "issue": "The bell passes 0.132 m into the thigh, the forearm -0.098 m and the hand -0.084 m at 0.5. The bell and hand vanish into the knee during the backswing.",
+       "fix": "Route the arm and bell between the thighs with positive clearance."
+      },
+      {
+       "phase": "0.000",
+       "view": "right",
+       "issue": "At lockout the working arm is hidden behind the head, and the bell appears perched on the skull.",
+       "fix": "Lockout slightly outside the head line so the arm and bell are visible from the far side."
+      },
+      {
+       "phase": "0.500",
+       "view": "threequarter",
+       "issue": "Backswing frames (0.375 to 0.5) match the kb-clean backswing almost exactly. Only the top position differentiates the two exercises.",
+       "fix": "Acceptable as the true movement, but make the high pull and punch-through (0.25, 0.75) distinct: elbow high and bell turning over the hand."
+      },
+      {
+       "phase": "0.250",
+       "view": "front",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.000",
+       "view": "front",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    },
+    "kb-getup": {
+     "score": 5,
+     "confidence": "medium",
+     "summary": "The long sequence is recognisable, the bell arm stays vertical and the standing phases read well. The floor phases are cluttered: the support arm passes through the shin, the head is hidden, and from the front and right the transitional poses collapse into overlapping limbs.",
+     "defects": [
+      {
+       "phase": "0.367",
+       "view": "right",
+       "issue": "The support-side upper arm goes 0.083 m into the shin (0.077 m into the thigh; forearm/shin -0.065 m at 0.383). The posted arm is drawn through the leg during the bridge-to-kneel transition.",
+       "fix": "Place the support hand further back or out, and route the sweeping leg behind the arm, keeping positive clearance."
+      },
+      {
+       "phase": "0.000",
+       "view": "front",
+       "issue": "Lying supine, the head is hidden behind the torso, and the bent knee column sits next to the vertical bell arm, giving two parallel ivory verticals. It is unclear which is the arm.",
+       "fix": "Accept partial orbit limitation, but a slightly raised head or offset knee would separate the silhouettes."
+      },
+      {
+       "phase": "0.375",
+       "view": "threequarter",
+       "issue": "The kneeling transition piles the support arm, both legs and the shoe into one knot beside the pelvis, so the contacts (hand, knee, foot) are not individually readable.",
+       "fix": "Space the support hand and knee further apart; check the silhouette at native size for each contact phase."
+      },
+      {
+       "phase": "0.375",
+       "view": "front",
+       "issue": "The head drops sideways toward the support hand, and the support forearm and hand merge with the kneeling leg.",
+       "fix": "Same spacing fix."
+      },
+      {
+       "phase": "0.625",
+       "view": "front",
+       "issue": "Hands are two-segment tapered capsules with no thumb or finger mass, and the handle is drawn as a thin square-cornered ivory bracket in the same fixed ivory as near-side limbs. The grip reads only from positional coincidence: the hand looks like a stump touching a wire rather than fingers wrapped around a handle.",
+       "fix": "Give hands a paddle or mitten form with a thumb bump that visibly wraps the handle. Round the handle into a continuous arc, and give it a steel tone distinct from skin so the contact point reads."
+      },
+      {
+       "phase": "0.625",
+       "view": "front",
+       "issue": "The bell body comes from an 8-point lathe profile, so its silhouette shows faceted corners. Its light grey (#b4b1a6) sits close to the far-side limb grey and the pants, and at roughly head width it reads as a mid-weight ball rather than a dense cast-iron mass.",
+       "fix": "Smooth the profile with more points, add a flat base and a proper window between body and handle, and use a darker, higher-contrast iron colour (with outline) so the bell separates from limbs and reads as heavy."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "role": "anatomy",
+   "revision": "54e441838d09",
+   "reviewedAt": "2026-09-29T12:00:00Z",
+   "method": "Read review-rubric.md, rig.py, kettlebell.py, motions.py (kb-deadlift, goblet-squat, reverse-lunge), kb_advanced.py and contracts.json. Inspected all 14 contact sheets (4 views x 8 phases; 16 phases for get-up) and enlarged frames for kb-deadlift 0.0 threequarter, goblet-squat 0.5 threequarter, kb-halo 0.125 threequarter, kb-clean 0.5 front, kb-getup 0.375 threequarter / 0.5 left / 0.5625 front. Used geometry.json for bone, grip, support, seam and drawn-radius clearances. Probed pose_for() in python3: knee, elbow and hip angles, forearm tilt, bell-to-head distance, and a whole-body centre of mass from Dempster-style segment fractions (70 kg body + 16 kg bell) against the contact polygon. Bone lengths, grip attachment, support drift, floor and loop seam pass validation for every clip. Not exercised: real playback, so timing, velocity and momentum are inferred from the authoring curves only. Head/trunk-vs-bell clearance and the dynamic (centripetal) bell load were estimated by hand, not measured by a validator. The COM model is approximate, so balance findings within about 2 cm of an edge are medium confidence.",
+   "exercises": {
+    "kb-swing": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "The hinge-to-stand pattern, planted feet and long arms are credible. But the forearms pass deep into the thighs at the backswing, and the float has no counterbalance, so the bell looks close to weightless.",
+     "defects": [
+      {
+       "phase": "0.0",
+       "view": "front",
+       "issue": "Forearms and upper arms interpenetrate the thighs (forearm vs thigh -8.8 cm, upper arm -2.1 cm with drawn radii). The arms pass through the legs instead of meeting the inner thigh or groin.",
+       "fix": "Move the hands above the knees and between the thighs (a higher, tighter hike), or widen the knees and stance so the forearms contact the inner thigh with clearance of 0 or more."
+      },
+      {
+       "phase": "0.5",
+       "view": "left",
+       "issue": "At the chest-height float the body is perfectly vertical with the bell 0.66 m forward. Combined COM is +0.149 m against a toe edge of +0.16 m. With centripetal pull the lifter would tip forward. There is no counter-lean or hip-forward plank.",
+       "fix": "Add a slight posterior lean of about 3-6 degrees (pelvis slightly forward of the ankles, shoulders slightly behind) at the float so the COM stays mid-foot."
+      },
+      {
+       "phase": "0.75",
+       "view": "left",
+       "issue": "Hinge and arm angle are both driven by the same symmetric pulse. The descent exactly mirrors the ascent, and the hips start folding while the arms are still about 55 degrees up (early hinge). There is no visible 'wait for the bell' or deceleration into the backswing.",
+       "fix": "Decouple the timing: keep the hips extended until the forearms reach the pelvis on the way down, then hinge quickly. Make the downswing faster than the float."
+      }
+     ]
+    },
+    "kb-deadlift": {
+     "score": 5,
+     "confidence": "high",
+     "summary": "The start, lift and lockout sequence is readable and feet stay planted. But the arms pass through the thighs and shins at the floor, the bottom position is an extreme fold, and at lockout the bell is held forward instead of hanging.",
+     "defects": [
+      {
+       "phase": "0.083",
+       "view": "threequarter",
+       "issue": "Upper arms pass through the thighs (-11.0 cm) and forearms through the thighs (-9.4 cm at 0.133). Upper arm vs shin is -7.4 cm at 0.0. These are geometrically impossible overlaps at the most important frame.",
+       "fix": "Put the arms clearly inside the knees (spread the knees and widen the stance slightly) or move the grip lateral to the knees. The validator should reject negative clearances."
+      },
+      {
+       "phase": "0.0",
+       "view": "left",
+       "issue": "The trunk is 72 degrees from vertical with the knees at 93 degrees, giving a trunk-thigh angle of about 40 degrees. The chest nearly rests on the thighs. This is a squat depth combined with a horizontal torso, not a hip hinge.",
+       "fix": "Use about 45-55 degrees of trunk lean with less knee flexion (about 110-130 degrees), so the hips are higher and the shoulders sit over the bell."
+      },
+      {
+       "phase": "0.5",
+       "view": "left",
+       "issue": "At lockout the bell sits 0.16 m ahead of the shoulders with straight arms angled forward. That is a front-raise hold, and a hanging load would pull the arms plumb against the thighs.",
+       "fix": "End with the arms vertical and the bell hanging just in front of or between the thighs. Keep any knee-clearance offset only in mid-lift."
+      }
+     ]
+    },
+    "goblet-squat": {
+     "score": 8,
+     "confidence": "high",
+     "summary": "Credible goblet squat. Heels stay down, the knees track forward over the feet, the trunk lean balances the chest-held load, the combined COM stays mid-foot, and the arms clear the thighs at the bottom.",
+     "defects": [
+      {
+       "phase": "0.5",
+       "view": "front",
+       "issue": "Minor: the narrow stance (0.30 m) with knees straight ahead makes the upper arms close to the thighs (+1.6 cm). The trunk is one rigid segment, so there is no thoracic extension against the load.",
+       "fix": "Optional: add a slight knee abduction or turn-out so the elbows sit inside the knees with more margin."
+      }
+     ]
+    },
+    "kb-reverse-lunge": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "Step back, rear forefoot support, lowering and the fixed front foot are all credible, with good knee angles (front about 77, rear about 94 degrees). The return lifts the rear foot while the COM is still over the front heel.",
+     "defects": [
+      {
+       "phase": "0.375",
+       "view": "left",
+       "issue": "The rear foot leaves the floor while the pelvis is still 0.13 m back. Combined COM is -0.076 m against a front-heel edge of -0.075 m, so the lifter is balanced on the heel edge and the push-off shows no forward weight transfer (mirrored at 0.875).",
+       "fix": "Shift the pelvis forward over the front mid-foot before or as the rear toe leaves the floor, so the drive comes from the front leg."
+      }
+     ]
+    },
+    "kb-side-lunge": {
+     "score": 8,
+     "confidence": "medium",
+     "summary": "Wide-stance lateral shift with a flexed working knee aligned over its foot, a long trailing leg, hips sitting back and the chest-held bell. The COM stays well inside the wide base.",
+     "defects": [
+      {
+       "phase": "0.25",
+       "view": "front",
+       "issue": "Minor: the trunk is one rigid block with a 15 degree lean and no pelvis rotation toward the working leg, so the sit-back looks slightly stiff.",
+       "fix": "Optional: add a few degrees of hip rotation and trunk lean over the working thigh."
+      }
+     ]
+    },
+    "kb-upright-row": {
+     "score": 5,
+     "confidence": "high",
+     "summary": "The elbows lead and stay below the shoulders, but the bell travels in a vertical line 0.20 m in front of the body. The arm action is forward shoulder flexion, not an upright row close to the body.",
+     "defects": [
+      {
+       "phase": "0.0",
+       "view": "left",
+       "issue": "At the bottom the straight arms angle about 20 degrees forward and hold the bell 20 cm in front of the thighs. A hanging bell would pull the arms plumb against the legs.",
+       "fix": "Start with the arms vertical and the bell hanging against the thighs."
+      },
+      {
+       "phase": "0.5",
+       "view": "left",
+       "issue": "At the top the elbows are 0.27 m in front of the torso (upper arm mostly forward). The bell stays 20 cm off the chest, and there is no trunk counter-lean for that moment arm.",
+       "fix": "Keep the bell within a few centimetres of the torso along the whole path. Raise the elbows up and out in the scapular plane (upper arm mostly lateral), and pull the handle toward the lower chest."
+      }
+     ]
+    },
+    "kb-bent-row": {
+     "score": 8,
+     "confidence": "high",
+     "summary": "A stable hinge (55 degrees lean, soft knees) with a hanging start. The elbows travel back past the torso beside the ribs and the COM stays over mid-foot. Mechanics are credible.",
+     "defects": [
+      {
+       "phase": "0.2",
+       "view": "front",
+       "issue": "Minor: the bell touches the thighs (-0.7 cm). The pull ends near the hip crease rather than the lower ribs.",
+       "fix": "Optional: bring the grip path 2-3 cm forward so the bell clears the thighs and finishes nearer the lower ribs."
+      }
+     ]
+    },
+    "kb-side-bend": {
+     "score": 6,
+     "confidence": "medium",
+     "summary": "The bend goes toward the loaded side with planted feet and a stable pelvis, and the handoff grip holds. The loaded arm stays abducted, so the bell hangs away from the leg and does not read as weight.",
+     "defects": [
+      {
+       "phase": "0.25",
+       "view": "front",
+       "issue": "The loaded arm is held about 17 degrees abducted (world-space FK, outward 0.30), so the bell hangs well outside the thigh during the bend. A heavy bell would pull the arm plumb against the side of the leg.",
+       "fix": "Let the loaded arm hang vertical from the shoulder in world space, with the bell beside the outer thigh sliding toward the knee as the trunk bends."
+      },
+      {
+       "phase": "0.25",
+       "view": "front",
+       "issue": "All lateral flexion happens at one pelvis-chest hinge. There is no small contralateral hip shift to keep the COM centred.",
+       "fix": "Add a 1-3 cm pelvis shift away from the bell as the trunk bends."
+      }
+     ]
+    },
+    "kb-curl": {
+     "score": 7,
+     "confidence": "medium",
+     "summary": "Elbow-only flexion with a quiet upper arm, a bell hanging below the handle, and a credible transfer grip. The working arm stays abducted away from the body under load.",
+     "defects": [
+      {
+       "phase": "0.125",
+       "view": "front",
+       "issue": "Both arms stay about 17 degrees abducted (outward 0.30), so the bell hangs out to the side at the bottom and curls in a tilted plane. A loaded arm would hang with the elbow against the ribs.",
+       "fix": "Reduce the working-arm abduction to about 5 degrees at the bottom, with the elbow pinned near the flank throughout the curl."
+      }
+     ]
+    },
+    "kb-halo": {
+     "score": 8,
+     "confidence": "medium",
+     "summary": "The fixed-length arms circle the head with straight wrists and continuous horn grips, and the shoulders elevate when the elbows rise. Bell, arms and head clear each other (bell to head centre at least 0.214 m, forearm to head at least 0.153 m).",
+     "defects": [
+      {
+       "phase": "0.25",
+       "view": "left",
+       "issue": "Minor: the trunk and neck stay perfectly still as the bell passes behind the head, with no bracing or small forward counter-lean. The load reads light.",
+       "fix": "Optional: add a 1-2 degree forward trunk counter-lean as the bell passes behind the head."
+      }
+     ]
+    },
+    "kb-clean": {
+     "score": 4,
+     "confidence": "high",
+     "summary": "The phase order and rack are credible, but the single-arm backswing drives the bell and forearm through the left thigh and shin. The pull flares the elbow wide, and the free arm does not hang.",
+     "defects": [
+      {
+       "phase": "0.542",
+       "view": "front",
+       "issue": "The bell interpenetrates the left thigh (-12.8 cm) and shin (-8.9 cm at 0.333). Forearm vs thigh is -9.9 cm and hand vs thigh -8.5 cm. The bell is visibly buried in the leg at the backswing.",
+       "fix": "Route the single-arm backswing through the midline between the knees, with the wrist near the groin. Widen the stance if needed, and require clearance of 0 or more in QA."
+      },
+      {
+       "phase": "0.75",
+       "view": "front",
+       "issue": "During the pull to the rack the elbow flares 0.20 m outside the shoulder (upper arm about 45 degrees lateral). The contract cue is 'elbow back and in', and a flare throws the bell around the arm.",
+       "fix": "Keep the elbow close to the ribs and moving backward, with the hand tracking up the body before it rotates around the bell."
+      },
+      {
+       "phase": "0.5",
+       "view": "threequarter",
+       "issue": "In the hinge the free arm points forward and down about 33 degrees from vertical (world-space FK plus the hinge term) instead of hanging or counterbalancing.",
+       "fix": "Let the free arm hang plumb from the shoulder, or mirror the working arm slightly behind as a counterbalance."
+      }
+     ]
+    },
+    "kb-press": {
+     "score": 5,
+     "confidence": "high",
+     "summary": "The rack and the lockout (biceps by the ear, bell on the back of the forearm) are credible. Through the mid-range the forearm is far off vertical and the elbow points straight out sideways, so the load is off the line of force.",
+     "defects": [
+      {
+       "phase": "0.3",
+       "view": "front",
+       "issue": "The forearm is 65 degrees from vertical, with the upper arm pointing almost purely lateral (direction y 0.84) and the wrist medial near the face. This contradicts the intended 'forearm vertical under the bell' and implies a huge shoulder torque (mirrored at 0.75-0.82).",
+       "fix": "Keep the wrist stacked over the elbow through the whole press, with the elbow about 30-45 degrees forward of the frontal plane and the hand path just outside the face."
+      },
+      {
+       "phase": "0.0",
+       "view": "threequarter",
+       "issue": "In the rack the forearm is tilted 37 degrees with the wrist inside the elbow, so it is not the vertical forearm, tucked elbow and bell resting in the arm/chest pocket.",
+       "fix": "Make the rack forearm near vertical, with the elbow on the ribcage under the wrist."
+      }
+     ]
+    },
+    "kb-snatch": {
+     "score": 4,
+     "confidence": "high",
+     "summary": "The turnover, hip drive, high pull and punch-through sequence is present, with a credible lockout. The backswing buries the bell in the left thigh, and the punch-through grazes the head.",
+     "defects": [
+      {
+       "phase": "0.375",
+       "view": "front",
+       "issue": "Bell vs left thigh is -13.2 cm. Forearm vs thigh -9.8 cm and hand vs thigh -8.4 cm at 0.50-0.51, and bell vs shin -3.7 cm at 0.525. These are impossible overlaps at the backswing.",
+       "fix": "Use the same fix as the clean: route the bell through the midline between the knees and hike it high to the groin, then re-validate clearances."
+      },
+      {
+       "phase": "0.833",
+       "view": "threequarter",
+       "issue": "On the punch-through the bell centre passes 0.159 m from the head centre. With a 0.095 m bell radius and a head half-width of about 0.08 m, that is about 2 cm of bell-head interpenetration (between the sampled 0.75 and 0.875 frames).",
+       "fix": "Push the punch-through path about 3 cm more lateral or forward of the head, and add bell-vs-head to the clearance validator."
+      }
+     ]
+    },
+    "kb-getup": {
+     "score": 3,
+     "confidence": "high",
+     "summary": "The bell arm stays vertical and the floor pins are exact, but several transitions are not physically possible. The stand-up happens on one foot with the COM outside the base, the sweeping leg passes through the support arm, and the elbow-support stage never touches the floor.",
+     "defects": [
+      {
+       "phase": "0.5625",
+       "view": "front",
+       "issue": "From 0.52 to 0.58 the rear knee leaves the floor and the right foot is airborne (ankle 0.18-0.24 m high) while the pelvis rises. The only support is the left foot at y +0.17 while the combined COM is at y -0.11 to -0.02. The lifter would fall sideways. Same error on the way down at about 0.69-0.74.",
+       "fix": "Keep the rear knee then the rear toes planted while rising out of the half-kneel (a lunge stand). Shift the COM over the front foot before either rear contact unloads, and step the rear foot up only once the COM is over the front foot."
+      },
+      {
+       "phase": "0.367",
+       "view": "threequarter",
+       "issue": "During the leg sweep the right upper arm passes through the shin (-8.3 cm) and thigh (-7.7 cm), and the forearm through the shin (-6.5 cm). The knee rises to 0.65 m instead of threading low under the hips (mirrored at about 0.81).",
+       "fix": "Sweep the straight leg back under the bridged hips along the floor, behind the posted arm, keeping the knee low and clear of the support arm."
+      },
+      {
+       "phase": "0.125",
+       "view": "left",
+       "issue": "The authored 'elbow' key (0.15) never grounds the elbow (elbow joint 0.12 m above the floor). The trunk is held up on a bent arm with only a palm contact, so the roll-to-elbow support stage is missing.",
+       "fix": "Pin the right forearm or elbow to the floor during the elbow stage, then transition to the posted hand."
+      },
+      {
+       "phase": "0.5",
+       "view": "left",
+       "issue": "The kneeling rear shin is horizontal while the foot points forward under the shin, about 36 degrees beyond neutral dorsiflexion. At exactly 0.5 the knee contact is dropped from the contact list although the knee is still on the floor.",
+       "fix": "Orient the rear foot vertical with the toes tucked behind the ankle, and keep the knee in the contact set through the whole kneel hold."
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

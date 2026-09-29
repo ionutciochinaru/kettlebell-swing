@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Switch, Text, View } from 'react-native';
 
@@ -110,6 +111,7 @@ export default function Profile() {
           />
         </Row>
       </Card>
+      <Button label="Animation review" kind="ghost" onPress={() => router.push('/debug/animations')} />
     </Screen>
   );
 }

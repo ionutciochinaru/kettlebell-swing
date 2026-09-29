@@ -33,7 +33,11 @@ type State = {
   syncedSessionIds: string[];
   stateUpdatedAt: string;
   lastSyncedAt?: string;
+  /** Your animation ratings from the review page, keyed by exercise id. */
+  animationReviews: Record<string, AnimationRating>;
 };
+
+export type AnimationRating = { score: number; note: string; revision: string; updatedAt: string };
 
 type Actions = {
   setAuthMode: (mode: AuthMode | undefined) => void;
@@ -52,6 +56,7 @@ type Actions = {
   deleteCustomWorkout: (id: string) => void;
   mergeRemote: (remote: { sessions: SessionLog[]; state?: RemoteState }) => void;
   markSynced: (ids: string[]) => void;
+  rateAnimation: (exercise: string, rating: Omit<AnimationRating, 'updatedAt'>) => void;
 };
 
 export type RemoteState = Pick<State, 'settings' | 'prescriptions' | 'customWorkouts' | 'stateUpdatedAt'>;
@@ -70,6 +75,7 @@ export const useApp = create<State & Actions>()(
       customWorkouts: [],
       syncedSessionIds: [],
       stateUpdatedAt: now(),
+      animationReviews: {},
 
       setAuthMode: (authMode) => set({ authMode }),
 
@@ -141,6 +147,9 @@ export const useApp = create<State & Actions>()(
             lastSyncedAt: now(),
           };
         }),
+
+      rateAnimation: (exercise, rating) =>
+        set((s) => ({ animationReviews: { ...s.animationReviews, [exercise]: { ...rating, updatedAt: now() } } })),
 
       markSynced: (ids) => set((s) => ({ syncedSessionIds: [...new Set([...s.syncedSessionIds, ...ids])], lastSyncedAt: now() })),
     }),

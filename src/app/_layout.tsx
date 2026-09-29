@@ -49,6 +49,10 @@ export default function RootLayout() {
             name="builder"
             options={{ headerShown: true, title: '', headerTransparent: true, headerTintColor: Palette.text }}
           />
+          <Stack.Screen
+            name="debug/animations"
+            options={{ headerShown: true, title: '', headerTransparent: true, headerTintColor: Palette.text }}
+          />
           <Stack.Screen name="session" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
         </Stack.Protected>
         <Stack.Protected guard={authMode === undefined}>

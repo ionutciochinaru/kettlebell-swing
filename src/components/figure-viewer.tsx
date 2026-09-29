@@ -15,17 +15,33 @@ const FOV = 30;
 const MIN_ELEVATION = -0.05;
 const MAX_ELEVATION = 1.25;
 
-function Scene({ clipId, orbit, speed, paused }: { clipId: string; orbit: React.RefObject<Orbit>; speed: number; paused: boolean }) {
+type SceneProps = {
+  clipId: string;
+  orbit: React.RefObject<Orbit>;
+  speed: number;
+  paused: boolean;
+  /** Fixed loop position in [0, 1); overrides playback. */
+  phase?: number;
+  onPhase?: (phase: number) => void;
+};
+
+function Scene({ clipId, orbit, speed, paused, phase, onPhase }: SceneProps) {
   const clip = clips[clipId];
   const figure = useMemo(() => new Figure(), []);
   const bounds = useMemo(() => clipBounds(clip), [clip]);
   const { camera } = useThree();
   const time = useRef(0);
+  const reported = useRef(0);
 
   useEffect(() => () => figure.dispose(), [figure]);
 
   useFrame((_, delta) => {
-    if (!paused) time.current += Math.min(delta, 0.1);
+    if (phase !== undefined) time.current = phase * clip.duration;
+    else if (!paused) time.current += Math.min(delta, 0.1) * speed;
+    if (onPhase && performance.now() - reported.current > 100) {
+      reported.current = performance.now();
+      onPhase((((time.current / clip.duration) % 1) + 1) % 1);
+    }
     const { azimuth, elevation } = orbit.current;
     // Aim slightly low so the figure sits above the playback controls.
     const target = new THREE.Vector3(...bounds.center).add(new THREE.Vector3(0, -bounds.size * 0.07, 0));
@@ -36,7 +52,7 @@ function Scene({ clipId, orbit, speed, paused }: { clipId: string; orbit: React.
       target.z + distance * Math.cos(azimuth) * Math.cos(elevation),
     );
     camera.lookAt(target);
-    figure.update(samplePose(clip, time.current, speed), camera.position);
+    figure.update(samplePose(clip, time.current), camera.position);
   });
 
   return (
@@ -58,24 +74,36 @@ export function FigureViewer({
   clipId,
   style,
   controls = true,
+  view,
+  phase,
+  speed: speedProp,
+  paused: pausedProp,
+  onPhase,
 }: {
   clipId: string;
   style?: ViewStyle;
   controls?: boolean;
+  /** Camera in degrees; changing it moves the camera (dragging still works). */
+  view?: { azimuth: number; elevation: number };
+  phase?: number;
+  speed?: number;
+  paused?: boolean;
+  onPhase?: (phase: number) => void;
 }) {
   const clip = clips[clipId];
   // Start from the watch camera, so the side it draws near (and single-arm work) faces you.
+  const azimuth = view?.azimuth ?? clip.view.azimuth;
+  const elevation = view?.elevation ?? clip.view.elevation;
   const home = useMemo<Orbit>(
-    () => ({
-      azimuth: THREE.MathUtils.degToRad(clip.view.azimuth),
-      elevation: THREE.MathUtils.degToRad(clip.view.elevation),
-    }),
-    [clip],
+    () => ({ azimuth: THREE.MathUtils.degToRad(azimuth), elevation: THREE.MathUtils.degToRad(elevation) }),
+    [azimuth, elevation],
   );
   const orbit = useRef<Orbit>({ ...home });
   const start = useRef<Orbit>({ ...home });
-  const [speed, setSpeed] = useState(1);
-  const [paused, setPaused] = useState(false);
+  const [speedState, setSpeed] = useState(1);
+  const [pausedState, setPaused] = useState(false);
+  const speed = speedProp ?? speedState;
+  const paused = pausedProp ?? pausedState;
 
   useEffect(() => {
     orbit.current = { ...home };
@@ -105,7 +133,7 @@ export function FigureViewer({
         onResponderGrant={onGrant}
         onResponderMove={onMove}>
         <Canvas camera={{ fov: FOV, near: 0.05, far: 20 }} style={{ flex: 1 }}>
-          <Scene clipId={clipId} orbit={orbit} speed={speed} paused={paused} />
+          <Scene clipId={clipId} orbit={orbit} speed={speed} paused={paused} phase={phase} onPhase={onPhase} />
         </Canvas>
       </View>
       {controls && (
