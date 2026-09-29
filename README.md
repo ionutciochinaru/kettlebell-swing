@@ -4,6 +4,10 @@ A kettlebell training app for iOS, Android and web, built with Expo. It runs cir
 
 ## Features
 
+- **Exercises (14):**
+  - Swing, deadlift, goblet squat, reverse and side lunges, upright and bent-over rows, side bend, curl and halo.
+  - Single-arm clean, press and snatch, and the Turkish get-up.
+- **Workout builder** (`src/app/builder.tsx`, `src/core/builder.ts`): combine any blocks and exercises into your own workouts. They sync with your account.
 - **Training types:** strength sets (double progression), circuits, EMOM, AMRAP, intervals/Tabata, ladders. Workouts are lists of blocks, compiled into a step timeline (`src/core/timeline.ts`).
 - **Progressive overload** (`src/core/progression.ts`)
   - **Strength sets:** add reps within the rep range; when every set hits the top, move to your next heavier bell. Two sessions in a row below the range step back down.
@@ -50,5 +54,7 @@ npm run validate:animations   # geometry checks (segment lengths, contacts, loop
 - `export_3d.py` samples each motion at 30 fps into `assets/animations/*.json` (joint positions in mm) and regenerates `src/animation/clips.ts`. The export fails on any IK error.
 - `export_thumbs.py` draws list thumbnails with the unchanged watch renderer.
 - `src/animation/figure.ts` builds the 3D figure from those joints.
+
+`python3 tools/make_icons.py` regenerates the app icon, Android adaptive layers, splash image and favicon from the same renderer.
 
 To add an exercise, author its motion in `tools/animation/` following `skills/exercise-animation/SKILL.md`. Then add it to `EXERCISES` in `export_3d.py` and `src/core/exercises.ts`, and run `npm run animations`.

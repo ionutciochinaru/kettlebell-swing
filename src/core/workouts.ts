@@ -146,6 +146,35 @@ export const PRESET_WORKOUTS: Workout[] = [
     ],
   },
   {
+    id: 'clean-and-press',
+    name: 'Clean & Press',
+    summary: 'Five rounds of cleans and presses on each arm. Strict presses from a solid rack.',
+    blocks: [
+      {
+        kind: 'circuit',
+        rounds: 5,
+        restBetweenStations: 15,
+        restBetweenRounds: 75,
+        stations: [
+          { exercise: 'kb-clean', target: { reps: 5 } },
+          { exercise: 'kb-press', target: { reps: 5 } },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'snatch-emom',
+    name: 'Snatch EMOM 12',
+    summary: 'Every minute: 6 snatches per arm, switching hands at the top. Twelve minutes.',
+    blocks: [{ kind: 'emom', minutes: 12, stations: [{ exercise: 'kb-snatch', target: { reps: 6 } }] }],
+  },
+  {
+    id: 'getup-practice',
+    name: 'Get-up Practice',
+    summary: 'Slow, perfect Turkish get-ups. Owning every position matters more than the load.',
+    blocks: [{ kind: 'sets', exercise: 'kb-getup', sets: 5, repRange: [1, 3], rest: 60 }],
+  },
+  {
     id: 'arms-and-core',
     name: 'Arms & Core',
     summary: 'Curls, side bends and halos for the smaller muscles.',

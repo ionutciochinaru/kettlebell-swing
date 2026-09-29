@@ -327,3 +327,10 @@ def pose_for(exercise_id,phase):
     phase=float(phase)%1.
     if exercise_id not in MOTIONS: raise ValueError(f'Unimplemented exercise: {exercise_id}')
     return MOTIONS[exercise_id](exercise_id,phase).result()
+
+try:
+    from .kb_advanced import ADVANCED_MOTIONS
+except ImportError:
+    from kb_advanced import ADVANCED_MOTIONS
+MOTIONS.update(ADVANCED_MOTIONS)
+IDS.extend(ADVANCED_MOTIONS)

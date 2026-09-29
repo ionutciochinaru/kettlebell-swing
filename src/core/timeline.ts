@@ -129,13 +129,14 @@ export function compileWorkout(workout: Workout, plan: LoadPlan): Step[] {
   });
 }
 
-/** Rough duration in seconds, assuming ~3 s per rep for rep-counted work. */
+/** Rough duration in seconds, from each exercise's typical seconds per rep. */
 export function estimateSeconds(steps: Step[]): number {
   return steps.reduce((total, step) => {
     if (step.kind !== 'work') return total + step.duration;
     if (step.duration) return total + step.duration;
     const reps = 'reps' in step.target ? step.target.reps : 0;
-    return total + reps * 3 * (getExercise(step.exercise).unilateral ? 2 : 1);
+    const exercise = getExercise(step.exercise);
+    return total + reps * (exercise.repSeconds ?? 3) * (exercise.unilateral ? 2 : 1);
   }, 0);
 }
 

@@ -286,5 +286,21 @@
   "doorframe-rows": {
     "frames": 24,
     "fps": 8
+  },
+  "kb-clean": {
+    "frames": 24,
+    "fps": 10
+  },
+  "kb-press": {
+    "frames": 30,
+    "fps": 10
+  },
+  "kb-snatch": {
+    "frames": 24,
+    "fps": 10
+  },
+  "kb-getup": {
+    "frames": 200,
+    "fps": 10
   }
 }

@@ -124,6 +124,43 @@ export function Stat({ value, label }: { value: string; label: string }) {
   );
 }
 
+export function Stepper({
+  label,
+  value,
+  onChange,
+  step = 1,
+  min = 0,
+  max = 999,
+  unit = '',
+}: {
+  label: string;
+  value: number;
+  onChange: (value: number) => void;
+  step?: number;
+  min?: number;
+  max?: number;
+  unit?: string;
+}) {
+  const set = (next: number) => onChange(Math.min(max, Math.max(min, next)));
+  return (
+    <View style={styles.stepperRow}>
+      <Text style={styles.stepperLabel}>{label}</Text>
+      <View style={styles.stepperControls}>
+        <Pressable accessibilityLabel={`Decrease ${label}`} onPress={() => set(value - step)} style={({ pressed }) => [styles.stepperButton, pressed && styles.cardPressed]}>
+          <Text style={styles.stepperSymbol}>−</Text>
+        </Pressable>
+        <Text style={styles.stepperValue}>
+          {value}
+          {unit}
+        </Text>
+        <Pressable accessibilityLabel={`Increase ${label}`} onPress={() => set(value + step)} style={({ pressed }) => [styles.stepperButton, pressed && styles.cardPressed]}>
+          <Text style={styles.stepperSymbol}>+</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
 export function Row({ children, style }: { children: ReactNode; style?: ViewStyle }) {
   return <View style={[styles.row, style]}>{children}</View>;
 }
@@ -155,4 +192,10 @@ export const styles = StyleSheet.create({
   statValue: { color: Palette.text, fontSize: 24, fontWeight: '800', fontVariant: ['tabular-nums'] },
   statLabel: { color: Palette.muted, fontSize: 12, fontWeight: '600' },
   row: { flexDirection: 'row', alignItems: 'center', gap: Spacing.two },
+  stepperRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: Spacing.two },
+  stepperLabel: { color: Palette.text, fontSize: 15, flex: 1 },
+  stepperControls: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  stepperButton: { width: 38, height: 38, borderRadius: 19, backgroundColor: Palette.tonal, alignItems: 'center', justifyContent: 'center' },
+  stepperSymbol: { color: Palette.text, fontSize: 20, fontWeight: '700' },
+  stepperValue: { color: Palette.text, fontSize: 17, fontWeight: '800', minWidth: 52, textAlign: 'center', fontVariant: ['tabular-nums'] },
 });

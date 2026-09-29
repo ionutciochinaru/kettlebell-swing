@@ -81,6 +81,9 @@ export default function WorkoutDetail() {
       </Card>
 
       <Button label="Start workout" kind="go" large onPress={() => router.push({ pathname: '/session', params: { workout: workout.id } })} />
+      {custom.some((w) => w.id === workout.id) && (
+        <Button label="Edit workout" kind="tonal" onPress={() => router.push({ pathname: '/builder', params: { id: workout.id } })} />
+      )}
     </Screen>
   );
 }

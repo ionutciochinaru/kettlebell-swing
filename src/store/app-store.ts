@@ -48,6 +48,8 @@ type Actions = {
     effort: Record<string, Effort>;
   }) => SessionLog;
   deleteSession: (id: string) => void;
+  saveCustomWorkout: (workout: Workout) => void;
+  deleteCustomWorkout: (id: string) => void;
   mergeRemote: (remote: { sessions: SessionLog[]; state?: RemoteState }) => void;
   markSynced: (ids: string[]) => void;
 };
@@ -110,6 +112,20 @@ export const useApp = create<State & Actions>()(
       },
 
       deleteSession: (id) => set((s) => ({ sessions: s.sessions.filter((x) => x.id !== id), stateUpdatedAt: now() })),
+
+      saveCustomWorkout: (workout) =>
+        set((s) => {
+          const exists = s.customWorkouts.some((w) => w.id === workout.id);
+          return {
+            customWorkouts: exists
+              ? s.customWorkouts.map((w) => (w.id === workout.id ? workout : w))
+              : [...s.customWorkouts, workout],
+            stateUpdatedAt: now(),
+          };
+        }),
+
+      deleteCustomWorkout: (id) =>
+        set((s) => ({ customWorkouts: s.customWorkouts.filter((w) => w.id !== id), stateUpdatedAt: now() })),
 
       mergeRemote: ({ sessions, state }) =>
         set((s) => {

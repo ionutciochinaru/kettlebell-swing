@@ -1,4 +1,4 @@
-export type Pattern = 'hinge' | 'squat' | 'lunge' | 'pull' | 'arms' | 'core';
+export type Pattern = 'hinge' | 'squat' | 'lunge' | 'pull' | 'press' | 'arms' | 'core' | 'full-body';
 
 export type Exercise = {
   id: string;
@@ -10,6 +10,8 @@ export type Exercise = {
   unilateral: boolean;
   /** How a single repetition is counted. */
   counting: string;
+  /** Typical seconds per rep (per side), for workout length estimates. Default 3. */
+  repSeconds?: number;
   primary: string[];
   support: string[];
   cues: string[];
@@ -168,6 +170,72 @@ export const EXERCISES: Exercise[] = [
       'Circle it close around the head.',
       'Ribs stay down; the torso does not sway.',
       'Alternate directions.',
+    ],
+  },
+  {
+    id: 'kb-clean',
+    name: 'Single-arm clean',
+    animation: 'kb-clean',
+    pattern: 'hinge',
+    unilateral: true,
+    counting: 'One clean from the backswing to the rack, per side',
+    primary: ['Glutes', 'Hamstrings'],
+    support: ['Upper back', 'Core', 'Grip'],
+    cues: [
+      'Start like a one-arm swing: hike the bell back high.',
+      'Snap the hips, then pull the elbow back and in close to the ribs.',
+      'Let the hand come around the bell so it lands softly on the forearm.',
+      'Rack: wrist straight, elbow tucked, bell resting outside the forearm.',
+    ],
+  },
+  {
+    id: 'kb-press',
+    name: 'Single-arm press',
+    animation: 'kb-press',
+    pattern: 'press',
+    unilateral: true,
+    counting: 'One press from the rack to lockout, per side',
+    primary: ['Shoulders', 'Triceps'],
+    support: ['Upper back', 'Core', 'Glutes'],
+    cues: [
+      'Start in a solid rack; squeeze glutes and brace.',
+      'Keep the forearm vertical under the bell as it rises.',
+      'Finish with the arm straight and the biceps near the ear.',
+      'Lower under control back to the rack.',
+    ],
+  },
+  {
+    id: 'kb-snatch',
+    name: 'Single-arm snatch',
+    animation: 'kb-snatch',
+    pattern: 'hinge',
+    unilateral: true,
+    counting: 'One snatch from the backswing to lockout, per side',
+    primary: ['Glutes', 'Hamstrings', 'Shoulders'],
+    support: ['Upper back', 'Core', 'Grip'],
+    cues: [
+      'Hike the bell back and drive the hips hard.',
+      'Pull high with the elbow, keeping the bell close.',
+      'Punch the hand through as the bell floats so it does not flip onto the wrist.',
+      'Lock out overhead, then turn the bell over and let it fall into the next backswing.',
+    ],
+  },
+  {
+    id: 'kb-getup',
+    name: 'Turkish get-up',
+    animation: 'kb-getup',
+    pattern: 'full-body',
+    unilateral: true,
+    counting: 'One get-up to standing and back down, per side',
+    repSeconds: 30,
+    primary: ['Shoulders', 'Core'],
+    support: ['Glutes', 'Upper back', 'Hips'],
+    cues: [
+      'Eyes on the bell; the bell arm stays vertical the whole time.',
+      'Roll to the elbow, then post on the hand.',
+      'Bridge the hips high, sweep the straight leg under to a kneel.',
+      'Straighten the torso, windshield-wiper the back shin, then stand.',
+      'Reverse every step slowly to lie back down.',
     ],
   },
 ];

@@ -26,7 +26,7 @@ CONTRACTS = json.loads((Path(__file__).parent / 'contracts.json').read_text())
 
 EXERCISES = ['kb-swing', 'kb-deadlift', 'goblet-squat', 'kb-reverse-lunge',
              'kb-side-lunge', 'kb-upright-row', 'kb-bent-row', 'kb-side-bend',
-             'kb-curl', 'kb-halo']
+             'kb-curl', 'kb-halo', 'kb-clean', 'kb-press', 'kb-snatch', 'kb-getup']
 JOINTS = ['pelvis', 'chest', 'neck', 'head', 'face',
           *[f'{name}_{side}' for side in ('l', 'r')
             for name in ('hip', 'knee', 'ankle', 'heel', 'toe',

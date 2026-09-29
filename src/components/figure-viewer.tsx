@@ -27,7 +27,8 @@ function Scene({ clipId, orbit, speed, paused }: { clipId: string; orbit: React.
   useFrame((_, delta) => {
     if (!paused) time.current += Math.min(delta, 0.1);
     const { azimuth, elevation } = orbit.current;
-    const target = new THREE.Vector3(...bounds.center);
+    // Aim slightly low so the figure sits above the playback controls.
+    const target = new THREE.Vector3(...bounds.center).add(new THREE.Vector3(0, -bounds.size * 0.07, 0));
     const distance = (bounds.size / 2 / Math.tan(THREE.MathUtils.degToRad(FOV / 2))) * 1.3;
     camera.position.set(
       target.x + distance * Math.sin(azimuth) * Math.cos(elevation),
@@ -63,10 +64,10 @@ export function FigureViewer({
   controls?: boolean;
 }) {
   const clip = clips[clipId];
-  // Start from the watch camera, mirrored so the figure faces screen-right as on the watch.
+  // Start from the watch camera, so the side it draws near (and single-arm work) faces you.
   const home = useMemo<Orbit>(
     () => ({
-      azimuth: -THREE.MathUtils.degToRad(clip.view.azimuth),
+      azimuth: THREE.MathUtils.degToRad(clip.view.azimuth),
       elevation: THREE.MathUtils.degToRad(clip.view.elevation),
     }),
     [clip],

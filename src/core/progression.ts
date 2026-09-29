@@ -40,8 +40,10 @@ const START_FRACTION: Record<Pattern, number> = {
   squat: 0.34,
   lunge: 0.2,
   pull: 0.2,
+  press: 0,
   arms: 0,
   core: 0,
+  'full-body': 0,
 };
 
 /** Conservative starting bell: hinges start mid-range, small muscles lightest. */

@@ -45,6 +45,10 @@ export default function RootLayout() {
             name="workout/[id]"
             options={{ headerShown: true, title: '', headerTransparent: true, headerTintColor: Palette.text }}
           />
+          <Stack.Screen
+            name="builder"
+            options={{ headerShown: true, title: '', headerTransparent: true, headerTintColor: Palette.text }}
+          />
           <Stack.Screen name="session" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
         </Stack.Protected>
         <Stack.Protected guard={authMode === undefined}>

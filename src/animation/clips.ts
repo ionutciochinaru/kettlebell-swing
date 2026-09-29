@@ -12,4 +12,8 @@ export const clips: Record<string, Clip> = {
   'kb-side-bend': require('@/assets/animations/kb-side-bend.json'),
   'kb-curl': require('@/assets/animations/kb-curl.json'),
   'kb-halo': require('@/assets/animations/kb-halo.json'),
+  'kb-clean': require('@/assets/animations/kb-clean.json'),
+  'kb-press': require('@/assets/animations/kb-press.json'),
+  'kb-snatch': require('@/assets/animations/kb-snatch.json'),
+  'kb-getup': require('@/assets/animations/kb-getup.json'),
 };
