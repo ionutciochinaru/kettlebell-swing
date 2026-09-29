@@ -50,7 +50,22 @@ motion spec (lift type, stance, bell mass, tempo)
   5. Side bend and curl: the loaded arm is held away from the side.
   6. The load never looks heavy.
   7. Hands and bell are placeholders.
-- Full records: `docs/animation-review/54e441838d09/review-*.json`, with sheets and `geometry.json` alongside.
+- **User scores (2026-09-29):**
+  - 8: bent-over row
+  - 7: goblet squat, reverse lunge, upright row, curl, halo
+  - 6: side lunge
+  - 5: swing
+  - 4: deadlift, clean, get-up
+  - 3: side bend, snatch
+  - 2: press
+- **User notes:** "hands going in the legs (and arms)" (swing, deadlift, clean, press, snatch, get-up); the side bend's weight "feels like paper, not a 10 15 20 kg weight"; halo glitches when the bell is in front; get-up "very stiff"; upright-row hands bend unnaturally.
+- **Gap the user found:** the evidence only measured clearance against the legs. Measured afterwards:
+  - the press bell sits 15 cm inside its own upper arm;
+  - the clean and snatch bell passes about 10 cm through its own forearm;
+  - the snatch bell overlaps the head by 3.6 cm.
+
+  Validator v2 must check the bell and hands against **every** body part (arms, torso, head), and the halo's 1 cm clearance needs a margin.
+- Full records: `docs/animation-review/54e441838d09/review-*.json` (including `review-user.json`), with sheets and `geometry.json` alongside.
 
 ### M1: Rig v2 (Python)
 - **Hierarchical skeleton with rotations,** not just positions:

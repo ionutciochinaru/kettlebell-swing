@@ -1,0 +1,90 @@
+{
+  "revision": "54e441838d09",
+  "exportedAt": "2026-09-29T13:43:13.954Z",
+  "ratings": {
+    "kb-swing": {
+      "score": 5,
+      "note": "hands going in the legs",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:37:52.011Z"
+    },
+    "kb-deadlift": {
+      "score": 4,
+      "note": "hands going in the legs",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:38:10.956Z"
+    },
+    "goblet-squat": {
+      "score": 7,
+      "note": "",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:38:22.148Z"
+    },
+    "kb-reverse-lunge": {
+      "score": 7,
+      "note": "",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:38:39.198Z"
+    },
+    "kb-side-lunge": {
+      "score": 6,
+      "note": "",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:38:48.385Z"
+    },
+    "kb-upright-row": {
+      "score": 7,
+      "note": "hands bend in an unnatural way",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:39:32.661Z"
+    },
+    "kb-bent-row": {
+      "score": 8,
+      "note": "",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:39:45.792Z"
+    },
+    "kb-side-bend": {
+      "score": 3,
+      "note": "feels like the weight is like a paper, not a 10 15 20 kg weight",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:42:13.669Z"
+    },
+    "kb-curl": {
+      "score": 7,
+      "note": "",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:40:51.124Z"
+    },
+    "kb-halo": {
+      "score": 7,
+      "note": "when the kettlebell is in front there are some visual glitches",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:41:39.106Z"
+    },
+    "kb-clean": {
+      "score": 4,
+      "note": "hands going in the legs",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:42:32.269Z"
+    },
+    "kb-press": {
+      "score": 2,
+      "note": "hands going in the legs and arms",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:42:57.093Z"
+    },
+    "kb-snatch": {
+      "score": 3,
+      "note": "hands going in the legs and arms",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:42:52.879Z"
+    },
+    "kb-getup": {
+      "score": 4,
+      "note": "hands going in the legs and arms. very stiff",
+      "revision": "54e441838d09",
+      "updatedAt": "2026-09-29T13:43:10.361Z"
+    }
+  }
+}
