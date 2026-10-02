@@ -1,3 +1,5 @@
+> **Moved:** this project continues as **Spamset** at https://github.com/ionutciochinaru/spamset-app. This repository is archived.
+
 # Kettlebell Swing
 
 A kettlebell training app for iOS, Android and web, built with Expo. It runs circuits, EMOMs, AMRAPs, intervals, ladders and strength sets, tracks every set, and applies progressive overload using the bells you own. Each exercise is demonstrated by a looping 3D figure you can drag to inspect the form from any angle.
